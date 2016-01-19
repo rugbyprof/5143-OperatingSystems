@@ -37,3 +37,4 @@
 |--------------------------|---------|
 | `history`           | show a history of all your commands |
 | `!x`                | this loads command `x` from your history so you can run it again |
+| `chmod xxx`         | change modify permission | 
