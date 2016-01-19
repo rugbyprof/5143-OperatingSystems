@@ -1,5 +1,5 @@
 
-List
+## List files
 
 ```
 ls
@@ -16,10 +16,14 @@ ls -la
 ```
 As you can see, ls -a lists files that are normally hidden and in a log form (shows permissions and ownership).
 
+## Make Directory
+
 ```
 mkdir dirname
 ```
 Make a directory (folder)
+
+## Changing Directory
 
 ```
 cd dirname
@@ -45,6 +49,8 @@ By itself, `cd` means take me to my home directory
 cd ~
 ```
 Another way of changing to your home directory in an explicit way. So the `~` represents `home`.
+
+## Print Working Directory
 
 ```
 pwd
