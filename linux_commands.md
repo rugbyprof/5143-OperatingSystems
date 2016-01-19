@@ -56,3 +56,26 @@ Another way of changing to your home directory in an explicit way. So the `~` re
 pwd
 ```
 Print working directory (shows the path of your current location)
+
+## Examples 1
+
+```
+ls ~   
+```
+List all files in my home directory
+
+```
+ls ~/..
+```
+List all files of the parent to my home directory
+
+| Command	      | Meaning                                       |
+|---------------|------------------------------------------------|
+| ls	          | list files and directories                    |
+| ls -a	        | list all files and directories                |
+| mkdir	        | make a directory                              |
+| cd directory	| change to named directory                     |
+| cd	          | change to home-directory                      |
+| cd ~	        | change to home-directory                      |
+| cd ..	        | change to parent directory                    | 
+| pwd	          | display the path of the current directory     |
