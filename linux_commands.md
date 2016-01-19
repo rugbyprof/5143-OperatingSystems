@@ -32,3 +32,8 @@
 | `cat file1 file2 > file0`  | concatenate file1 and file2 to file0 |
 | `sort`                     | sort data |
 | `who`                      | list users currently logged in |
+
+| Command | Meaning |
+|--------------------------|---------|
+| `history`           | show a history of all your commands |
+| `!x`                | this loads command `x` from your history so you can run it again |
