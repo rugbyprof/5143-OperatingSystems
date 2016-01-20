@@ -4,7 +4,7 @@ Talkin about some operating systems
 ### Companion Site
 https://piazza.com/mwsu/spring2016/cmps5143/home
 
-![os pic](http://www.moschip.com/uploads//OperatingSystems.jpg)
+![os pic](http://ecx.images-amazon.com/images/I/51xilf5QJqL._SX365_BO1,204,203,200_.jpg)
 
 ## Book
 
