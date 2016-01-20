@@ -8,13 +8,7 @@ https://piazza.com/mwsu/spring2016/cmps5143/home
 
 # Heading 1
 
-Hello world
-
-- one
-- two
-- three
-
-
-1. one 
-1. tgwo]\\
-2. thlw
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
