@@ -61,7 +61,7 @@ Enrollment password: opsys
 >
 >**3**. The worth of the "homework/quizzes" section of the course will be calculated by a function based on the number of assignments and quizzes. If zero homeworks / quizzes are assigned then they will be assigned a 0% portion. If at least 10 are assigned then the full 25% will be assigned as its weight. If the full weight is not used the class will decide how the remaining percentage points will be assigned. 
 >
->**4**. Plane ticket prices, events like weddings, or trips out of the country are not valid excuses for missing the final exam time. I will not make accommodations for anything other than an issue vetted by the dean of students. 
+>**4**. Plane ticket prices, events like weddings, or trips out of the country are not valid excuses for missing the final exam at its scheduled time. I will not make accommodations for anything other than an issue vetted by the dean of students. 
 
 ## Misc:
 
