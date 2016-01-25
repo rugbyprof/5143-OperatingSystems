@@ -49,7 +49,7 @@ Enrollment password: opsys
 | Categories                     |     |  Grade   |          | 
 |:------------------------------ |:---:|:--------:|:--------:|
 | Exams (3)<sup>**1**</sup>	     | 35% |  A       | 89-100   |
-| Programs (3-5)<sup>**2**</sup> | 15% |  B       |  79-88   |
+| Programs / Projects (3-5)<sup>**2**</sup> | 15% |  B       |  79-88   |
 | Homework/Quizzes<sup>**3**</sup>|	20%|  C       | 69-78    |
 | Final<sup>**4**</sup>	         | 25% |  D       | 59-68    |
 | Participation	                 | 05% |  F       | below 59 |
@@ -57,7 +57,7 @@ Enrollment password: opsys
 
 >**1**. Lowest exam grade replaced by Final Exam grade (if beneficial).
 >
-**2**. Despite the low overall value of the programming portion of the course, ALL programs must be turned in running to pass the course.  They don't have to be necessarily correct, but they must run and they need to at least approach the solution (a "Hello World" program will not work). 
+**2**. Despite the low overall value of the programming/projects portion of the course, ALL programs must be turned in running to pass the course.  They don't have to be necessarily correct, but they must run and they need to at least approach the solution (a "Hello World" program will not work). 
 >
 >**3**. The worth of the "homework/quizzes" section of the course will be calculated by a function based on the number of assignments and quizzes. If zero homeworks / quizzes are assigned then they will be assigned a 0% portion. If at least 10 are assigned then the full 25% will be assigned as its weight. If the full weight is not used the class will decide how the remaining percentage points will be assigned. 
 >
@@ -75,5 +75,3 @@ Enrollment password: opsys
 
 
 - Periodically homework assignments will be taken up and graded. It is the student's responsibility to keep up with assignments and to ask questions over the assigned work, even if absent. All homework assignments are due at the specified time that may or may not be in conjunction with a class day. All assignments / homeworks will be uploaded via Github.
-
-![description](http://www.cliparthut.com/clip-arts/1004/banana-clip-art-1004558.png)
