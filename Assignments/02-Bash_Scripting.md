@@ -8,6 +8,7 @@ Due: Wednesday February 10th by Class time.
 2. Create a folder called `public_html` in your home directory. Set the permissions on this folder to be `755`.
 3. Create a folder called `5143_Opsys` in your home directory. Set the permissions on this folder to be `755`.
 4. All subsequent assignments for this course will be in this folder.
+5. Everything is on *&^*&^*&^ github.
 
 
 ### Script 1
