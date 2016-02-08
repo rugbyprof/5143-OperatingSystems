@@ -30,6 +30,8 @@ hello
 - Create a script which will print a random word. There is a file containing a list of words on your system (usually /usr/share/dict/words or /usr/dict/words). Hint: Piping will be useful here.
 - Name this script: `random.sh` and when run, should print out 1 random word to std out.
 
+>Update!! Words are located at **/usr/share/dict**
+
 ### Script 3 
 
 - Create a script which will take a filename as its first argument and create a dated copy of the file. eg. if the file was named `file1.txt` it would create a copy such as `2016-01-28_file1.txt`. (To achieve this you will probably want to play with command substitution and the command date).
