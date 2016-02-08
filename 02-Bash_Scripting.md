@@ -13,7 +13,7 @@ Due: Wednesday February 10th by Class time.
 ### Script 1
 
 - Create a script called `command_args.sh` which will read in all command line arguments and print them out.
-- For example `$>./command_args.sh arg1 "hello" 44` would print out:
+- For example `$ ./command_args.sh arg1 "hello" 44` would print out:
 
 ```
 command_args.sh
