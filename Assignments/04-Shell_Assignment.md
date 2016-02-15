@@ -12,6 +12,8 @@ own Shell. This first version we will only implement a basic shell which sits a 
 
 What we won't be implementing in this version is "autocompletion" or a "history" that allows a previous command to be loaded and then executed again. We will however provide a "history" command that simply shows the previous commands.
 
+We also won't be implementing "piping" or input/output redirection. Those will come later.
+
 ## Requirements
 
 The following list of commands will be implemented:
@@ -22,13 +24,18 @@ The following list of commands will be implemented:
         - `..` (previous directory)
         - `~` (home directory)
 - `cp` (copy file) [`cp file1 file2`]
+- `history` (show command history) [`history`]
 - `ls`  (file listing) [`ls -lt`] 
     - Flags:
+        - No flag gives simple listing.
         - `-l` long listing
         - `-t` ordered by time
 
 - `mv` (rename command) [`mv file1 to file2`]
 - `rm` (remove a file) [`rm filename`] 
+- `wc` (word count file) [`wc filename`]
+    - Flags:
+        - `-l` (number of lines) 
 - ...
 
 
