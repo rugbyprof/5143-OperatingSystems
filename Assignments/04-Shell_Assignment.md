@@ -13,12 +13,12 @@ own Shell.
 ## Requirements
 
 The following list of commands will be implemented:
-- ls  (file listing)
+- `ls`  (file listing)
     - Flags:
         - `-l`
-- cp (copy command)
-- mv (rename command)
-- chmod (change modify)
+- `cp` (copy command)
+- `mv` (rename command)
+- `chmod` (change modify)
 - 
 
 
