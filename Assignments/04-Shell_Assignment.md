@@ -10,7 +10,7 @@ commands that we use. We could do this in pretty much any language, in fact, "C"
 be something that we would release to market, however, Python is a pretty stout language and will simplify the implementation of your
 own Shell. 
 
-This first version we will only implement a basic shell: which sits a waits for commands. When the `enter` key is pressed, your shell will "parse" the command and execute it based on the name of the command, parameters, and any additional flags included on the command line. Of course your shell should not "crash" if things don't go as expected, so you will need to handle all kinds of bad input. 
+A command line interpreter contains a key component: ***The Parser***. This is the backbone of every "shell" or "cli". 
 
 The definition of `parse` is: 
 >- verb 
@@ -18,7 +18,19 @@ The definition of `parse` is:
 - noun (COMPUTING)
     - An act of or the result obtained by parsing a string or a text.
 
-We will break a sentence (string) into it's parts: 1) command 2) arguments 3) flags
+Basically `YO-Shell` will break a sentence (string) into it's main components: *1)* command *2)* arguments *3)* flags
+
+This first version we will only implement a basic shell: 
+1. Provide a prompt and wait for a command to be entered. 
+2. When the `enter` key is pressed, you will "parse" the command.
+3. Then based on the "command", its arguments, and any additional flags included on the command line, it will be executed. 
+4. Of course your shell should not "crash" if things don't go as expected, so you will need to handle all kinds of bad input:
+    - Missing arguments
+    - Misspelled command
+    - Unknown flags
+    - Badly formatted commands
+
+
 
 - Command:
     - This is the part of the string that tells the interpreter what specific action it wants to perform. 
