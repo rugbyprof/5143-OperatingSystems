@@ -43,9 +43,11 @@ What we won't implement in Version 1:
 
 Note:
 > There are many libraries that you could use to make this interpreter easier to implement. For example `argparse`, `cmd`, `plumbum`,`cli` and many many others. If you import a library that does most of the work for you, I will not give you credit for writing your own parser. We will however use **some** library support to give us access to the operating system. If you find a library and your not sure if you should use it, ask me.
+>
 
 ### The os Library
 
+Source: https://docs.python.org/2/library/os.html
 This module provides a portable way of using operating system dependent functionality. If you just want to read or write a file see open(), if you want to manipulate paths, see the os.path module, and if you want to read all the lines in all the files on the command line see the fileinput module. For creating temporary files and directories see the tempfile module, and for high-level file and directory handling see the shutil module.
 
 
