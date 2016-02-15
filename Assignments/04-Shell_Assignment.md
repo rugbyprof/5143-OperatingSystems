@@ -18,11 +18,7 @@ The definition of `parse` is:
 - noun (COMPUTING)
     - An act of or the result obtained by parsing a string or a text.
 
-We will break a sentence (string) into it's parts:
->- command
-- arguments
-- flags
-
+We will break a sentence (string) into it's parts: 1) command 2) arguments 3) flags
 
 - Command:
     - This is the part of the string that tells the interpreter what specific action it wants to perform. 
@@ -30,7 +26,15 @@ We will break a sentence (string) into it's parts:
 - Arguments:
     - This is one or more items that the command needs to perform it's action. 
     - They typically follow the command but they don't always have to. 
-
+    - An example is: `cp file1.txt file2.txt` where `file1.txt` is the first argument and `file2.txt` is the second argument. 
+    - If one of the mandatory arguments isn't present, your shell should handle this with an error message, and not crash.
+- Flags:
+    - These alter a command in specific ways. 
+    - Flags should start with a `-` and should be followed by one or more "flags".
+    - A flag could be a single letter like: `ls -l` where the `-l` specifies "long listing".
+    - A flag can be multiple letters like: `ls -la` or `ls -l -a` which both perform "long listings of all files".
+    - Sometimes a flag can be a word, but when words are used, it typically follows this format: `grep --color=always  abc  a_file.txt`.
+    - We won't implement this type of flag.
 
 What we won't implement in Version 1:
 - Autocompletion
