@@ -1,4 +1,5 @@
-# YO-Shell.v.1 (Your Own Shell) 
+# YO-Shell.v.1 
+### (Your Own Shell) 
 Due: TBD
 
 # Not COMPLETE
@@ -62,27 +63,28 @@ This module provides a portable way of using operating system dependent function
 
 ## Requirements
 
-The following list of commands will be included in `YO-Shell`:
-- `cat` (list a file) [`cat filename`]
-- `chmod` (change modify) [`chmod 777 filename`]
-- `cd` (change directory) [`cd newDirectory`]
-    - Options:
-        - `..` (previous directory)
-        - `~` (home directory)
-- `cp` (copy file) [`cp file1 file2`]
-- `history` (show command history) [`history`]
-- `ls`  (file listing) [`ls -lt`] 
-    - Flags:
-        - No flag gives simple listing.
-        - `-l` long listing
-        - `-t` ordered by time
-
-- `mv` (rename command) [`mv file1 to file2`]
-- `rm` (remove a file) [`rm filename`] 
-- `wc` (word count file) [`wc filename`]
-    - Flags:
-        - `-l` (number of lines) 
-- ...
+- You will write a command line interpreter (Shell) that will allow a user to excecute the following commands:
+    - `cat` (list a file) [`cat filename`]
+    - `chmod` (change modify) [`chmod 777 filename`]
+    - `cd` (change directory) [`cd newDirectory`]
+        - Options:
+            - `..` (previous directory)
+            - `~` (home directory)
+    - `cp` (copy file) [`cp file1 file2`]
+    - `history` (show command history) [`history`]
+    - `ls`  (file listing) [`ls -lt`] 
+        - Flags:
+            - No flag gives simple listing.
+            - `-l` long listing
+            - `-t` ordered by time
+    
+    - `mv` (rename command) [`mv file1 to file2`]
+    - `rm` (remove a file) [`rm filename`] 
+    - `wc` (word count file) [`wc filename`]
+        - Flags:
+            - `-l` (number of lines) 
+    - ...
+- You may work by yourself, or in a group of 2 - 3.  
 
 
 ## Deliverables
@@ -90,4 +92,7 @@ The following list of commands will be included in `YO-Shell`:
 - Create a folder called `YO-Shell.v.1` in your home directory.
 - Create a file called `parser.py` inside this folder.
 - Place all necessary code in `parser.py` to fulfill the requirements. 
+- Push your code to your github repository.  
+- If in a group, all members need to have the code in thier repository.
+- I won't grade projects that are not both on the server, and github. 
 -  ...
