@@ -19,7 +19,7 @@ The following list of commands will be implemented:
 - `cp` (copy command)
 - `mv` (rename command)
 - `chmod` (change modify)
-- 
+- ...
 
 
 ## Deliverables
