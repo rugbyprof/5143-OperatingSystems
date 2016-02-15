@@ -19,14 +19,17 @@ The definition of `parse` is:
     - An act of or the result obtained by parsing a string or a text.
 
 We will break a sentence (string) into it's parts:
-
-- command
+>- command
 - arguments
 - flags
 
 
-- Command - This is the part of the string that tells the interpreter what specific action it wants to perform. This is the first item in the string. 
-- Arguments - This is one or more items that the command needs to perform it's action. They typically follow the command but they don't always have to. 
+- Command:
+    - This is the part of the string that tells the interpreter what specific action it wants to perform. 
+    - This is the first item in the string. 
+- Arguments:
+    - This is one or more items that the command needs to perform it's action. 
+    - They typically follow the command but they don't always have to. 
 
 
 What we won't implement in Version 1:
@@ -35,7 +38,11 @@ What we won't implement in Version 1:
 - Input/Output redirection
 
 Note:
-> There are many libraries that you could use to make this easier to implement. For example `argparse`, `cmd`, `plumbum`,`cli` and many many others. If you import a library that does most of the work for you, I will not give you credit for writing your own parser. 
+> There are many libraries that you could use to make this interpreter easier to implement. For example `argparse`, `cmd`, `plumbum`,`cli` and many many others. If you import a library that does most of the work for you, I will not give you credit for writing your own parser. We will however use **some** library support to give us access to the operating system. If you find a library and your not sure if you should use it, ask me.
+
+### The os Library
+
+This module provides a portable way of using operating system dependent functionality. If you just want to read or write a file see open(), if you want to manipulate paths, see the os.path module, and if you want to read all the lines in all the files on the command line see the fileinput module. For creating temporary files and directories see the tempfile module, and for high-level file and directory handling see the shutil module.
 
 
 
