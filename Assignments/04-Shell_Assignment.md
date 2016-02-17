@@ -22,9 +22,11 @@ The definition of `parse` is:
 Basically `YO-Shell` will break a sentence (string) into it's main components: **1)** command **2)** arguments **3)** flags
 
 #### Command:
+
     - This is the part of the string that tells the interpreter what specific action it wants to perform. 
     - This is the first item in the string. 
 #### Arguments:
+
     - This is one or more items that the command needs to perform it's action. 
     - They typically follow the command but they don't always have to, meaning a 'flag' be be in front of the arguments (e.g. `mkdir -p /new/stuff/dir`)
     - An example is: `cp file1.txt file2.txt` where `file1.txt` is the first argument and `file2.txt` is the second argument. 
