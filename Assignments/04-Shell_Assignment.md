@@ -42,6 +42,7 @@ Basically `YO-Shell` will break a sentence (string) into it's main components: *
 - We won't implement this type of flag.
 
 For `YO-Shell` version 1 we will implement the following: 
+
 1. Provide a prompt and wait for a command to be entered. 
 2. When the `enter` key is pressed, you will "parse" the command into its parts.
 3. Then based on the "command", its arguments, and any additional flags included on the command line, it will be executed. 
