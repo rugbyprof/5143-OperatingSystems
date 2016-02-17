@@ -25,13 +25,14 @@ Basically `YO-Shell` will break a sentence (string) into it's main components: *
 
 - This is the part of the string that tells the interpreter what specific action it wants to perform. 
 - This is the first item in the string. 
+
 #### Arguments:
 
 - This is one or more items that the command needs to perform it's action. 
 - They typically follow the command but they don't always have to, meaning a 'flag' be be in front of the arguments (e.g. `mkdir -p /new/stuff/dir`)
 - An example is: `cp file1.txt file2.txt` where `file1.txt` is the first argument and `file2.txt` is the second argument. 
 - If one of the mandatory arguments isn't present, your shell should handle this with an error message, and not crash.
-- 
+
 #### Flags:
 - These alter a command in specific ways. 
 - Flags should start with a `-` and should be followed by one or more "flags".
