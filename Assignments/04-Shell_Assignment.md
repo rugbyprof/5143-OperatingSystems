@@ -77,12 +77,23 @@ This module provides a portable way of using operating system dependent function
             - `~` (home directory)
     - `cp` (copy file) [`cp file1 file2`]
     - `history` (show command history) [`history`]
-    - `ls`  (file listing) [`ls -lt`] 
+    - `ls`  (directory listing) [`ls -lt`] 
         - Flags:
             - No flag gives simple listing.
-            - `-l` long listing
-            - `-t` ordered by time
-    
+            - `-l` long listing (one file per row and shows size , permissions, and  creation date)
+            - `-t` ordered by time (one file per row and shows size, permission, and creation date
+    Example Listing:
+```
+            Simple Listing:
+                file1.txt   file2.txt   file3.txt   file4.txt   ....
+                fileN.txt   fileN+1.txt....
+            
+            Long Listing:
+            
+                file1.txt   13kb    644     Jan 19 17:33
+                file2.avi   1.3GB   755     Dec 12 13:21
+                ...
+```
     - `mv` (rename command) [`mv file1 to file2`]
     - `rm` (remove a file) [`rm filename`] 
     - `wc` (word count file) [`wc filename`]
