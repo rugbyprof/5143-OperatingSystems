@@ -94,6 +94,7 @@ This module provides a portable way of using operating system dependent function
                 file2.avi   1.3GB   755     Dec 12 13:21
                 ...
 ```
+
     - `mv` (rename command) [`mv file1 to file2`]
     - `rm` (remove a file) [`rm filename`] 
     - `wc` (word count file) [`wc filename`]
