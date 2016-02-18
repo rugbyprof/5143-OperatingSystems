@@ -114,9 +114,9 @@ texas-late 	4.32G 	640 		Dec:16:2015 04:11:37 		Nov:10:2015 06:27:53 	Nov:11:201
 us_roads2. 	972.12M 640 		Jan:19:2016 10:56:22 		Nov:19:2015 03:17:29 	Nov:19:2015 03:17:29
 vs2015.com 	3.69G 	644 		Feb:16:2016 03:11:49 		Jan:07:2016 10:54:22 	Jan:07:2016 10:54:22
 ```
-**ls -a** = same as `ls -l` but sorted by accessed time.
-**ls -m** = same as `ls -l` but sorted by modified time.
-**ls -c** = same as `ls -c` but sorted by changed time.
+- **ls -a** = same as `ls -l` but sorted by accessed time.
+- **ls -m** = same as `ls -l` but sorted by modified time.
+- **ls -c** = same as `ls -c` but sorted by changed time.
 
 
 - You may work by yourself, or in a group of 2 - 3.  
