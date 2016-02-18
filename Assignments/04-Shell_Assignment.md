@@ -132,6 +132,7 @@ $
 - **ls -m** = same as `ls -l` but sorted by modified time.
 - **ls -c** = same as `ls -c` but sorted by changed time.
 
+----
 
 - You may work by yourself, or in a group of 2 - 3.  
 
