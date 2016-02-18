@@ -82,25 +82,38 @@ This module provides a portable way of using operating system dependent function
             - No flag gives simple listing.
             - `-l` long listing (one file per row and shows size , permissions, and  creation date)
             - `-t` ordered by time (one file per row and shows size, permission, and creation date
-    Example Listing:
-```
-            Simple Listing:
-                file1.txt   file2.txt   file3.txt   file4.txt   ....
-                fileN.txt   fileN+1.txt....
-            
-            Long Listing:
-            
-                file1.txt   13kb    644     Jan 19 17:33
-                file2.avi   1.3GB   755     Dec 12 13:21
-                ...
-```
-
     - `mv` (rename command) [`mv file1 to file2`]
     - `rm` (remove a file) [`rm filename`] 
     - `wc` (word count file) [`wc filename`]
         - Flags:
             - `-l` (number of lines) 
     - ...
+
+### Example Outputs
+
+**ls**
+```
+File Listing 
+-----------
+aaaaa.txt       bbbb.exe        ccccc.avi       ddddd.doc       eeeeee.txt      fffff.cpp       ggggg.mp3  
+hhhhh.xlx       IIiiIIIIIII.css jjjjjjjjjj.mp4  kkkkkk.py       lllllllll.php   mmmm.c          nnnnnnnnnn.zip  
+-----------
+```
+**ls -l**
+```
+File Name   Size    Permissions Accessed                    Modified                Changed
+---------   -----   ----------- --------------------        --------------------    --------------------
+Office_Ins 	1.02G 	640 		Feb:04:2016 04:29:56 		Nov:10:2015 09:30:20 	Jan:24:2016 11:50:19
+VS2013_RTM 	2.76G 	777 		Feb:11:2016 04:09:25 		Jan:14:2016 03:47:10 	Feb:18:2016 12:32:22
+Win10_Engl 	3.8G 	644 		Jan:12:2016 09:02:08 		Jul:31:2015 09:35:42 	Nov:06:2015 10:10:17
+en_visio_p 	2.26G 	644 		Jan:08:2016 01:58:01 		Jan:08:2016 02:06:30 	Jan:08:2016 02:06:30
+en_windows 	2.66G 	644 		Jan:13:2016 12:28:12 		Jan:13:2016 12:38:38 	Jan:13:2016 12:38:38
+texas-late 	4.32G 	640 		Dec:16:2015 04:11:37 		Nov:10:2015 06:27:53 	Nov:11:2015 04:37:05
+us_roads2. 	972.12M 640 		Jan:19:2016 10:56:22 		Nov:19:2015 03:17:29 	Nov:19:2015 03:17:29
+vs2015.com 	3.69G 	644 		Feb:16:2016 03:11:49 		Jan:07:2016 10:54:22 	Jan:07:2016 10:54:22
+```
+
+
 - You may work by yourself, or in a group of 2 - 3.  
 
 
