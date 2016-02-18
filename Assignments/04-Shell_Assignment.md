@@ -95,15 +95,26 @@ This module provides a portable way of using operating system dependent function
 
 ### Example Outputs
 
+**cp**
+```
+$ cp file1.mp3 file2.mp3
+Copy successful.
+$ 
+```
+
 **ls**
 ```
+$ ls
+
 File Listing 
 -----------
 Office_Ins.pkg 	VS2013_RTM.iso 	Win10_Engl.iso 	en_visio_p.iso 	en_windows.iso 	texas-late.osm 	us_roads2.mssql 	vs2015.com.iso 	Office_Ins.pkg 
 -----------
+$
 ```
 **ls -l**
 ```
+$ ls -l
 File Name   Size    Permissions Accessed                    Modified                Changed
 ---------   -----   ----------- --------------------        --------------------    --------------------
 Office_Ins 	1.02G 	640 		Feb:04:2016 04:29:56 		Nov:10:2015 09:30:20 	Jan:24:2016 11:50:19
@@ -114,6 +125,7 @@ en_windows 	2.66G 	644 		Jan:13:2016 12:28:12 		Jan:13:2016 12:38:38 	Jan:13:201
 texas-late 	4.32G 	640 		Dec:16:2015 04:11:37 		Nov:10:2015 06:27:53 	Nov:11:2015 04:37:05
 us_roads2. 	972.12M 640 		Jan:19:2016 10:56:22 		Nov:19:2015 03:17:29 	Nov:19:2015 03:17:29
 vs2015.com 	3.69G 	644 		Feb:16:2016 03:11:49 		Jan:07:2016 10:54:22 	Jan:07:2016 10:54:22
+$
 ```
 - **ls -a** = same as `ls -l` but sorted by accessed time.
 - **ls -m** = same as `ls -l` but sorted by modified time.
@@ -126,8 +138,8 @@ vs2015.com 	3.69G 	644 		Feb:16:2016 03:11:49 		Jan:07:2016 10:54:22 	Jan:07:201
 ## Deliverables
 
 - Create a folder called `YO-Shell.v.1` in your home directory.
-- Create a file called `parser.py` inside this folder.
-- Place all necessary code in `parser.py` to fulfill the requirements. 
+- Create a file called `shell.py` inside this folder.
+- Place all necessary code in `shell.py` to fulfill the requirements. 
 - Push your code to your github repository.  
 - If in a group, all members need to have the code in thier repository.
 - I won't grade projects that are not both on the server, and github. 
