@@ -108,7 +108,7 @@ $ ls
 
 File Listing 
 -----------
-Office_Ins.pkg 	VS2013_RTM.iso 	Win10_Engl.iso 	en_visio_p.iso 	en_windows.iso 	texas-late.osm 	
+Office_Ins.pkg 	    VS2013_RTM.iso 	Win10_Engl.iso 	en_visio_p.iso 	en_windows.iso 	texas-late.osm 	
 us_roads2.mssql 	vs2015.com.iso 	Office_Ins.pkg 
 -----------
 $
