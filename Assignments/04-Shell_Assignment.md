@@ -81,7 +81,10 @@ This module provides a portable way of using operating system dependent function
         - Flags:
             - No flag gives simple listing.
             - `-l` long listing (one file per row and shows size , permissions, and  creation date)
-            - `-t` ordered by time (one file per row and shows size, permission, and creation date
+            - `-s` ordered by size (one file per row and shows size, permission, atime, mtime and ctime)
+            - `-a` ordered by atime (one file per row and shows size, permission, atime, mtime and ctime)
+            - `-m` ordered by mtime (one file per row and shows size, permission, atime, mtime and ctime)
+            - `-c` ordered by ctime (one file per row and shows size, permission, atime, mtime and ctime)
     - `mv` (rename command) [`mv file1 to file2`]
     - `rm` (remove a file) [`rm filename`] 
     - `wc` (word count file) [`wc filename`]
@@ -95,8 +98,7 @@ This module provides a portable way of using operating system dependent function
 ```
 File Listing 
 -----------
-aaaaa.txt       bbbb.exe        ccccc.avi       ddddd.doc       eeeeee.txt      fffff.cpp       ggggg.mp3  
-hhhhh.xlx       IIiiIIIIIII.css jjjjjjjjjj.mp4  kkkkkk.py       lllllllll.php   mmmm.c          nnnnnnnnnn.zip  
+Office_Ins.pkg 	VS2013_RTM.iso 	Win10_Engl.iso 	en_visio_p.iso 	en_windows.iso 	texas-late.osm 	us_roads2.mssql 	vs2015.com.iso 	Office_Ins.pkg 
 -----------
 ```
 **ls -l**
@@ -112,6 +114,9 @@ texas-late 	4.32G 	640 		Dec:16:2015 04:11:37 		Nov:10:2015 06:27:53 	Nov:11:201
 us_roads2. 	972.12M 640 		Jan:19:2016 10:56:22 		Nov:19:2015 03:17:29 	Nov:19:2015 03:17:29
 vs2015.com 	3.69G 	644 		Feb:16:2016 03:11:49 		Jan:07:2016 10:54:22 	Jan:07:2016 10:54:22
 ```
+**ls -a** = same as `ls -l` but sorted by accessed time.
+**ls -m** = same as `ls -l` but sorted by modified time.
+**ls -c** = same as `ls -c` but sorted by changed time.
 
 
 - You may work by yourself, or in a group of 2 - 3.  
