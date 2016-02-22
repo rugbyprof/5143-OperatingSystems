@@ -19,6 +19,7 @@ Enrollment password: opsys
 - Holidays: 
     - Martin Luther King: January 18 
     - Spring Break: March 21-26
+    - Easter Break March 28-29
 - Last Day for “W”: March 30
 
 ## Topics
