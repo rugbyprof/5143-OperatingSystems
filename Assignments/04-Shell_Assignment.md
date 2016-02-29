@@ -1,9 +1,7 @@
 # YO-Shell.v.1 
 **(Your Own Shell)** 
 
-Due: TBD
-
-# Not COMPLETE
+Due: 29 Feb at 5:00 p.m.
 
 ## Overview
 
