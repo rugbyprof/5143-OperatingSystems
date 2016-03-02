@@ -1,4 +1,4 @@
-Read This: http://jessenoller.com/blog/2009/02/01/python-threads-and-the-global-interpreter-lock
+Good Article on Threading: http://jessenoller.com/blog/2009/02/01/python-threads-and-the-global-interpreter-lock
 
 # Multithreading - Creating Threads 
 
