@@ -722,8 +722,9 @@ The definition for the `Timer` looks like this:
 class threading.Timer(interval, function, args=None, kwargs=None)
 ```
 
+### Timer with threads
+
 ```python
-Timer with threads
 import threading
 import time
 import logging
