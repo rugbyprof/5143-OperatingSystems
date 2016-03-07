@@ -438,14 +438,14 @@ if __name__ == '__main__':
     for i in range(3):
         t = threading.Thread(target=f)
         t.setDaemon(True)
-	t.start()
+        t.start()
 
     main_thread = threading.current_thread()
     for t in threading.enumerate():
-	if t is main_thread:
-		continue
-	logging.debug('joining %s', t.getName())
-	t.join()
+        if t is main_thread:
+            continue
+        logging.debug('joining %s', t.getName())
+        t.join()
 ```
 
 
