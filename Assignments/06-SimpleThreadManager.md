@@ -11,8 +11,8 @@ This is not a hard assignment, it's really just a homework. You should be able t
 - Each thread will run the same function for ease of implementation right now.
 
 ```python
-def fun(self):
-    time.sleep(random.randint(self.min,self.max)
+def fun(min,max):
+    time.sleep(random.randint(min,max)
     return
     
 ```
