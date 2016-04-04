@@ -45,5 +45,5 @@ Concurrency is a <em>very</em> big and complex subject, but these exercises shou
 
 [1]: https://github.com/rugbyprof/5143-OperatingSystems/blob/master/Assignments/06-Thread_Intro/threads1.py  "Threads1"
 [2]: https://github.com/rugbyprof/5143-OperatingSystems/blob/master/Assignments/06-Thread_Intro/threads2.py  "Threads2"
-[2]: https://github.com/rugbyprof/5143-OperatingSystems/blob/master/Assignments/06-Thread_Intro/threads3.py  "Threads3"
+[3]: https://github.com/rugbyprof/5143-OperatingSystems/blob/master/Assignments/06-Thread_Intro/threads3.py  "Threads3"
 [4]: https://github.com/rugbyprof/5143-OperatingSystems/blob/master/Assignments/06-Thread_Intro/threads4.py  "Threads4"
