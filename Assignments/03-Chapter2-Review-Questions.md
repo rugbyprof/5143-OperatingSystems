@@ -19,9 +19,9 @@ Due: February 15th by class time.
 
 ```
 # Chapter 2 Review Questions
-Name: Your Name Here
-Course: 5143 Operating Systems
-Date: DD MON YY (e.g. 08 Feb 2016)
+- Name: Your Name Here
+- Course: 5143 Operating Systems
+- Date: DD MON YY (e.g. 08 Feb 2016)
 
 ## Question 1
 
