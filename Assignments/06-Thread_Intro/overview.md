@@ -21,27 +21,44 @@ The exercises below provide pre-written examples in Python that:
 
 Concurrency is a <em>very</em> big and complex subject, but these exercises should get you started thinking about it.
 
-- Read and run [Threads1.py][1]. Make sure you understand the structure of the code and what's happening. If you don't, read the  <a href="http://docs.python.org/2/library/threading.html">documentation</a> or ask.
+### Lab 
+
+- Read and run [Threads1.py][1]. Make sure you understand the structure of the code and what's happening. If you don't, read the  <a href="http://docs.python.org/2/library/threading.html">documentation</a> along with any general python language references.
     
-- By the way, if the program takes to long to run to completion, feel free to adjust the loop counter limits to speed things up a little bit
-- You want it to take at least 5 seconds so you can see the interleaving of the threads.
+- If the program takes to long to run to completion, adjust the loop counter limits to speed things up, but make sure it runs for a minimum of 5 seconds.
     
+- Before running [Threads2.py][2], read it and try to understand it before viewing the output. 
 
-- Read [Threads2.py][2]. What do you expect to see that's different from before?
+- Run [Threads2.py][2] and view the output.
 
-- Run [Threads2.py][2]. Does it look right? (If you said yes, take a closer look at the end of your output. That's a race condition at work.) What do you think is going on?
+- Read and run [Threads3.py][3]. Does it fix the problems that occured in [Threads2.py][2]? Think about what the down side might be.
 
-- Read and run [Threads3.py][3]. Does it fix the problems with [Threads2.py][2]? What's the down-side?
+- Comment out the join statements at the bottom of the program and run it again.
 
-- Try commenting out the join statements at the bottom of the program. What happens? What if you try to Ctrl-C out of the program because it's boring you?
+- What if you try to Ctrl-C out of the program before it terminates?
 
-- Read and run [Threads4.py][4]. This should generate a different and more ridiculous race condition. Try to come up with a concise explanation of what's happening to cause this bizarre behavior.
+- Read and run [Threads4.py][4]. This should generate a different and more ridiculous race condition. 
 
 - Uncomment the lock operations in [Threads4.py][4]. Does that clear it up?
 
-- What questions do you have about the code in these examples?
+### Deliverables
+##### Due: Friday by 5:00 P.M
 
-- What questions do you have about threading in general.
+Upload a markdown file to your repository answering the following questions:
+
+1. Explain the differences between Threads1 and Threads2 using lines from the code and a precise explanation.
+
+2. After running Thread3.py does it fix the problems that occured in Threads2.py? What's the down-side?
+
+3. Comment out the join statements at the bottom of the program and describe what happens.
+
+4. What happens if you try to Ctrl-C out of the program before it terminates?
+
+5. Read and run Threads4.py. This generates a different and more ridiculous race condition. Write concise explanation of what's happening to cause this bizarre behavior using lines from the code and precise explanation.
+
+5. Does uncommenting the lock operations clear up the problem in question 5?
+
+Include your name, date, and M# at the top of your assignment.
 
 [1]: https://github.com/rugbyprof/5143-OperatingSystems/blob/master/Assignments/06-Thread_Intro/threads1.py  "Threads1"
 [2]: https://github.com/rugbyprof/5143-OperatingSystems/blob/master/Assignments/06-Thread_Intro/threads2.py  "Threads2"
