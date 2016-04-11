@@ -6,8 +6,17 @@ Due: February 15th by class time.
 
 ### Answer the following review questions:
 
-1. What are three objectives of an OS design?2. What is the kernel of an OS?3. What is multiprogramming?4. What is a process?5. How is the execution context of a process used by the OS?
-6. List and briefly explain five storage management responsibilities of a typical OS.7. Explain the distinction between a real address and a virtual address.8. Describe the round-robin scheduling technique.9. Explain the difference between a monolithic kernel and a microkernel.10. What is multithreading?11. List the key design issues for an SMP operating system.
+1. What are three objectives of an OS design?
+2. What is the kernel of an OS?
+3. What is multiprogramming?
+4. What is a process?
+5. How is the execution context of a process used by the OS?
+6. List and briefly explain five storage management responsibilities of a typical OS.
+7. Explain the distinction between a real address and a virtual address.
+8. Describe the round-robin scheduling technique.
+9. Explain the difference between a monolithic kernel and a microkernel.
+10. What is multithreading?
+11. List the key design issues for an SMP operating system.
 
 
 ## Deliverables
