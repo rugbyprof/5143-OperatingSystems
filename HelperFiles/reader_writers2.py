@@ -245,3 +245,6 @@ class RWLockTestCase(unittest.TestCase):
 			t.start()
 		for t in threads:
 			t.join()
+
+if __name__=='__main__':
+    
