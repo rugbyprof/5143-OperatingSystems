@@ -1,4 +1,4 @@
-# 5143-OperatingSystems
+# 5143-OperatingSystems - SYLLABUS
 ![os pic](http://ecx.images-amazon.com/images/I/51xilf5QJqL._AC_UL160_SR117,160_.jpg)
 - Title: Operating Systems: Internals and Design Principles (8th Edition) 8th Edition
 - Author: William Stallings 
