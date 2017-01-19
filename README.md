@@ -1,4 +1,7 @@
 # 5143-OperatingSystems - Syllabus
+
+- Roster: https://docs.google.com/spreadsheets/d/1b2SBwqFd3qE6yX0ArNJOgDWokpVF0yCcdO1WsjPq3C4/edit?usp=sharing
+
 ![os pic](http://ecx.images-amazon.com/images/I/51xilf5QJqL._AC_UL160_SR117,160_.jpg)
 - Title: Operating Systems: Internals and Design Principles (8th Edition) 8th Edition
 - Author: William Stallings 
