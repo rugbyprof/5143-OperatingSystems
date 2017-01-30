@@ -5,7 +5,13 @@ Shell Project
 
 ## Overview
 
-Your shell must support the following:
+How does the shell execute a user command? The mechanism follows the steps given below:
+- The shell locates an executable file whose name is specified in the first string given from a keyboard input.
+- It creates a child process by duplicating itself.
+- The duplicated shell overloads its process image with the executable file.
+- The overloaded process receives all the remaining strings given from a keyboard input, and starts a command execution.
+
+Your shell must support the following types of commands:
 
 1. The internal shell command "exit" which terminates the shell.
     - Concepts: shell commands, exiting the shell
