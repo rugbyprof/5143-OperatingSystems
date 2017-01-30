@@ -14,7 +14,12 @@ How does the shell execute a user command? It interactively follows the steps gi
 - It creates a child process by duplicating itself.
 - The overloaded process receives all the remaining strings given from a keyboard input, and starts a command execution.
 
-Your shell must support the following types of commands:
+## Requirements
+
+- You must use threads to execute each command in a thread.
+- You should wait for the thread to complete, before returning control to the main process (unless specified to run in background).
+- Your language of implementation is up to you, but I would prefer Python, C++, or Java (in that order).
+- Your shell must support the following types of commands:
 
 1. The internal shell command "exit" which terminates the shell.
     - Concepts: shell commands, exiting the shell
