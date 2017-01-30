@@ -21,6 +21,8 @@ How does the shell execute a user command? It interactively follows the steps gi
 - Your language of implementation is up to you, but I would prefer Python, C++, or Java (in that order).
 - Your shell must support the following types of commands:
 
+---------
+
 1. The internal shell command "exit" which terminates the shell.
     - Concepts: shell commands, exiting the shell
     - System calls: `exit()`
@@ -35,7 +37,7 @@ How does the shell execute a user command? It interactively follows the steps gi
     - Concepts: Command-line parameters 
 2. A command, with or without arguments, executed in the background using `&`.
     - For simplicity, assume that if present the `&` is always the last thing on the line.
-    - Example: `xemacs &`
+    - Example: `any-command &`
     - Details: In this case, your shell must execute the command and return immediately, not blocking until the command finishes.
     - Concepts: Background execution, signals, signal handlers, processes, asynchronous execution
     - System calls: `sigset()`
