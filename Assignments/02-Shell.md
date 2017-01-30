@@ -1,7 +1,7 @@
-# Not Complete
-
 Shell Project
 =============
+
+***NOT COMPLETE***
 
 ## Overview
 
