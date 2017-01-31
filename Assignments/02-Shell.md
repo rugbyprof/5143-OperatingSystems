@@ -1,9 +1,10 @@
 Shell Project
 =============
-Due: To Be Determined
 Part 1 - Group Selection - Due: 2 Feb 2017
 Part 2 - Repository Creation - Due: 7 Feb 2017
-Part 3 - 
+Part 3 - Small Working Example - Due: 14 Feb 2017
+Part 4 - Final Product - Due: 21 Feb 2017
+Part 5 - Project Presentations - 21 - 23 Feb 2017
 
 ## Overview
 
@@ -124,20 +125,22 @@ The above implementation of the `ls` command with the `-l` flag, is NOT an imple
 - Create a file called `README.md` in the `shell` folder.
 - Place a table at the top of the README similar to:
 
-***Group Members***
+>Group Members
+>
 | Name     | Email   | Github Username |
 |----------|---------|-----------------|
 | Name 1   | Email.One | username_one  |
 | Name 2   | Email.Two | username_two  |
 | Name 3   | Email.Three | username_three |
 
+***Part 2***
 - Each member of the group must perform the following tasks (make sure all folders and files are created with exactness).
-- Create a folder called `assignments` in your repository. 
-- Create a folder called `shell` in your `assignments` folder.
+- In your `assignments/shell` folder from Part 1. 
 - Create a file called `driver.py` in the `shell` folder.
 - Create a file called `README.md` in your `shell` folder.
 - Additional files are ok, for example if you want to place each "command" in a seperate file for organizational purposes, that would be not only acceptable, but encouraged.
 
+***Part 3 and Part 4***
 #### `driver.py`
 
 - This file is where your shell code will exist and be executed from. 
@@ -156,7 +159,8 @@ The above implementation of the `ls` command with the `-l` flag, is NOT an imple
 - A references section that cites any sources used to assist your group in creating the shell. 
     - Using some external code is ok as long as you follow the following guidelines:
         - Cite the source of the code in the `README.md` and in the comments of the `driver.py` file. 
-        - 
+        - Only use small portions of external code. 
+   - I reserve the right to make any final decisions on whether your group is obtaining too much external help. If your not sure, ask.
 - Group Members
 - Any instructions necessary to ensure I run your code correctly.
 
