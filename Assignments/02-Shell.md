@@ -14,7 +14,7 @@ You will be implementing a "shell". We use a shell quite often and should have a
         - It creates a child process by duplicating itself.
         - The overloaded process receives all the remaining strings given from a keyboard input (if necessary), and starts a command execution.
 
-## Requirements
+### Requirements
 
 - You must use threads to execute each command in a thread.
 - You should wait for the thread to complete, before returning control to the main process (unless specified to run in background).
@@ -59,7 +59,7 @@ You will be implementing a "shell". We use a shell quite often and should have a
 
 Note: You must check and correctly handle all return values. This means that you need to read the man pages for each function to figure out what the possible return values are, what errors they indicate, and what you must do when you get that error
 
-## Commands To Implement
+### Commands To Implement
 
 | Command	     | Flag / Param      | Meaning                           |
 |----------------|------------|-----------------------------------|
@@ -112,12 +112,12 @@ Note: You must check and correctly handle all return values. This means that you
 - Create a file called `README.md` in your `shell` folder.
 - Additional files are ok, for example if you want to place each "command" in a seperate file for organizational purposes, that would be not only acceptable, but encouraged.
 
-### `driver.py`
+#### `driver.py`
 
 - This file is where your shell code will exist and be executed from. 
 - You should code in a modular format with comments that are commensurate with graduate work.
 
-### `READMD.md`
+#### `READMD.md`
 
 - This file will list pertinant information to include (at a minimum):
 - Date
