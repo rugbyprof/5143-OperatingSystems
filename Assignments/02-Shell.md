@@ -67,12 +67,12 @@ Note: You must check and correctly handle all return values. This means that you
 |                |    `-a`	  |   list all show hidden files      |
 |                |    `-l`	  |    long listing                   |
 |                |    `-h`	  |    human readable sizes           |
-| `mkdir`	     |             |make a directory                              |
-| `cd directory` |             |change to named directory                     |
-| `cd`	         |             |change to home-directory                      |
-| `cd ~	`        |             |change to home-directory                      |
-| `cd ..`	     |             |change to parent directory                    | 
-| `pwd`	         |             |display the path of the current directory     |
+| `mkdir`	     |             |make a directory                  |
+| `cd directory` |             |change to named directory         |
+| `cd`	         |             |change to home-directory          |
+|                |   `~	`      |change to home-directory           |
+| 	             |   `..`      |change to parent directory          | 
+| `pwd`	         |             |display the path of the current directory |
 
 | Command | Meaning                                  |
 |---------|------------------------------------------|
@@ -87,7 +87,7 @@ Note: You must check and correctly handle all return values. This means that you
 | `grep 'keyword' file` | search a file for keywords |
 | `wc file` | count number of lines/words/characters in file |
 
-| Command | Meaning |
+| Command | Meaning      |
 |--------------------------|---------|
 | `command > file`           | redirect standard output to a file |
 | `command >> file`          | append standard output to a file |
