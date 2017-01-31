@@ -120,7 +120,11 @@ You will be implementing a "shell". We use a shell quite often and should have a
 - This file will list pertinant information to include (at a minimum):
 - Date
 - Project Title
-- Project desription 
+- Project description 
+    - With a list of all commands implemented
+    - Make a note of any commands that do not work or are not implemented.
+    - The documentation of non-working portions of the shell will be viewed favorably by me. 
+    - Passing of portions of the shell as working when they don't will affect your grade considerably.
 - Group Members
 - Any instructions necessary to ensure I run your code correctly.
 
