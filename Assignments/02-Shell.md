@@ -21,9 +21,7 @@ You will be implementing a "shell". We use a shell quite often and should have a
 - Your language of implementation will be Python.
 - Your shell must support the following types of commands:
 
----------
-
-1. The internal shell command "exit" which terminates the shell.
+>1. The internal shell command "exit" which terminates the shell.
     - **Concepts**: shell commands, exiting the shell
     - **System calls**: `exit()`
 2. A command with no arguments
@@ -57,7 +55,7 @@ You will be implementing a "shell". We use a shell quite often and should have a
     - **Concepts**: Pipes, synchronous operation
     - **System calls**: `pipe()`
 
-Note: You must check and correctly handle all return values. This means that you need to read the man pages for each function to figure out what the possible return values are, what errors they indicate, and what you must do when you get that error
+>Note: You must check and correctly handle all return values. This means that you need to read the man pages for each function to figure out what the possible return values are, what errors they indicate, and what you must do when you get that error
 
 ### Commands To Implement
 
