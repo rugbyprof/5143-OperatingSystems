@@ -136,6 +136,10 @@ The above implementation of the `ls` command with the `-l` flag, is NOT an imple
     - Make a note of any commands that do not work or are not implemented.
     - The documentation of non-working portions of the shell will be viewed favorably by me. 
     - Passing of portions of the shell as working when they don't will affect your grade considerably.
+- A references section that cites any sources used to assist your group in creating the shell. 
+    - Using some external code is ok as long as you follow the following guidelines:
+        - Cite the source of the code in the `README.md` and in the comments of the `driver.py` file. 
+        - 
 - Group Members
 - Any instructions necessary to ensure I run your code correctly.
 
