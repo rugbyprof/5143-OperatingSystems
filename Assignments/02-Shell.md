@@ -110,5 +110,19 @@ Note: You must check and correctly handle all return values. This means that you
 - Create a folder called `shell` in your `assignments` folder.
 - Create a file called `driver.py`in the `shell` folder.
 - Create a file called `README.md` in your `shell` folder.
+- Additional files are ok, for example if you want to place each "command" in a seperate file for organizational purposes, that would be not only acceptable, but encouraged.
 
 ### `driver.py`
+
+- This file is where your shell code will exist and be executed from. 
+- You should code in a modular format with comments that are commensurate with graduate work.
+
+### `READMD.md`
+
+- This file will list pertinant information to include (at a minimum):
+- Date
+- Project Title
+- Project desription 
+- Group Members
+- Any instructions necessary to ensure I run your code correctly.
+
