@@ -1,10 +1,10 @@
 Shell Project
 =============
-Part 1 - Group Selection - Due: 2 Feb 2017
-Part 2 - Repository Creation - Due: 7 Feb 2017
-Part 3 - Small Working Example - Due: 14 Feb 2017
-Part 4 - Final Product - Due: 21 Feb 2017
-Part 5 - Project Presentations - 21 - 23 Feb 2017
+- Part 1 - Group Selection - Due: 2 Feb 2017
+- Part 2 - Repository Creation - Due: 7 Feb 2017
+- Part 3 - Small Working Example - Due: 14 Feb 2017
+- Part 4 - Final Product - Due: 21 Feb 2017
+- Part 5 - Project Presentations - 21 - 23 Feb 2017
 
 ## Overview
 
