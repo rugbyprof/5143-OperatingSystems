@@ -1,6 +1,9 @@
 Shell Project
 =============
 Due: To Be Determined
+Part 1 - Group Selection - Due: 2 Feb 2017
+Part 2 - Repository Creation - Due: 7 Feb 2017
+Part 3 - 
 
 ## Overview
 
@@ -114,10 +117,24 @@ The above implementation of the `ls` command with the `-l` flag, is NOT an imple
 
 ## Deliverables
 
+***Part 1 - Group Selection***
 - Each member of the group must perform the following tasks (make sure all folders and files are created with exactness).
 - Create a folder called `assignments` in your repository. 
 - Create a folder called `shell` in your `assignments` folder.
-- Create a file called `driver.py`in the `shell` folder.
+- Create a file called `README.md` in the `shell` folder.
+- Place a table at the top of the README similar to:
+
+***Group Members***
+| Name     | Email   | Github Username |
+|----------|---------|-----------------|
+| Name 1   | Email.One | username_one  |
+| Name 2   | Email.Two | username_two  |
+| Name 3   | Email.Three | username_three |
+
+- Each member of the group must perform the following tasks (make sure all folders and files are created with exactness).
+- Create a folder called `assignments` in your repository. 
+- Create a folder called `shell` in your `assignments` folder.
+- Create a file called `driver.py` in the `shell` folder.
 - Create a file called `README.md` in your `shell` folder.
 - Additional files are ok, for example if you want to place each "command" in a seperate file for organizational purposes, that would be not only acceptable, but encouraged.
 
@@ -142,4 +159,5 @@ The above implementation of the `ls` command with the `-l` flag, is NOT an imple
         - 
 - Group Members
 - Any instructions necessary to ensure I run your code correctly.
+
 
