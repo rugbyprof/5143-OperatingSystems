@@ -61,16 +61,18 @@ Note: You must check and correctly handle all return values. This means that you
 
 ## Commands To Implement
 
-| Command	      | Meaning                                       |
-|---------------|------------------------------------------------|
-| `ls	`          | list files and directories                    |
-| `ls -a`	        | list all files and directories                |
-| `mkdir`	        | make a directory                              |
-| `cd directory`	| change to named directory                     |
-| `cd`	          | change to home-directory                      |
-| `cd ~	`        | change to home-directory                      |
-| `cd ..`	        | change to parent directory                    | 
-| `pwd`	          | display the path of the current directory     |
+| Command	     | Flags      | Meaning                           |
+|----------------|------------------------------------------------|
+| `ls	`        |            | list files and directories        |
+|                |    `-a`	  |   list all show hidden files      |
+|                |    `-l`	  |    long listing                   |
+|                |    `-h`	  |    human readable sizes           |
+| `mkdir`	     |             |make a directory                              |
+| `cd directory` |             |change to named directory                     |
+| `cd`	         |             |change to home-directory                      |
+| `cd ~	`        |             |change to home-directory                      |
+| `cd ..`	     |             |change to parent directory                    | 
+| `pwd`	         |             |display the path of the current directory     |
 
 | Command | Meaning                                  |
 |---------|------------------------------------------|
