@@ -61,7 +61,7 @@ Note: You must check and correctly handle all return values. This means that you
 
 ## Commands To Implement
 
-| Command	     | Flags      | Meaning                           |
+| Command	     | Flag / Param      | Meaning                           |
 |----------------|------------|-----------------------------------|
 | `ls	`        |            | list files and directories        |
 |                |    `-a`	  |   list all show hidden files      |
