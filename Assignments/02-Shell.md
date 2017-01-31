@@ -1,7 +1,6 @@
 Shell Project
 =============
-
-***NOT COMPLETE***
+Due: To Be Determined
 
 ## Overview
 
