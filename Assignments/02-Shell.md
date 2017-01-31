@@ -57,6 +57,17 @@ You will be implementing a "shell". We use a shell quite often and should have a
 
 >Note: You must check and correctly handle all return values. This means that you need to read the man pages for each function to figure out what the possible return values are, what errors they indicate, and what you must do when you get that error
 
+Additionally, and I shouldn't have to point this out, but implementing a command must be done without making a call to
+the existing shell:
+```python
+from subprocess import call
+
+call(["ls", "-l"])
+
+```
+The above implementation of the `ls` command with the `-l` flag, is NOT an implementation. It is a "system" call to the existing shell. I also do not expect your python implementation of the `ls` command to be as extensive as this: http://www.pixelbeat.org/talks/python/ls.py.html . Your implementations should be somewhere in between. 
+
+
 ### Commands To Implement
 
 | Command	     | Flag / Param      | Meaning                           |
