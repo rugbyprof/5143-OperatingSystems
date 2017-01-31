@@ -18,7 +18,7 @@ How does the shell execute a user command? It interactively follows the steps gi
 
 - You must use threads to execute each command in a thread.
 - You should wait for the thread to complete, before returning control to the main process (unless specified to run in background).
-- Your language of implementation is up to you, but I would prefer Python, C++, or Java (in that order).
+- Your language of implementation will be Python.
 - Your shell must support the following types of commands:
 
 ---------
@@ -103,3 +103,12 @@ Note: You must check and correctly handle all return values. This means that you
 | `!x`                | this loads command `x` from your history so you can run it again |
 | `chmod xxx`         | change modify permission | 
 
+## Deliverables
+
+- Each member of the group must perform the following tasks (make sure all folders and files are created with exactness).
+- Create a folder called `assignments` in your repository. 
+- Create a folder called `shell` in your `assignments` folder.
+- Create a file called `driver.py`in the `shell` folder.
+- Create a file called `README.md` in your `shell` folder.
+
+### `driver.py`
