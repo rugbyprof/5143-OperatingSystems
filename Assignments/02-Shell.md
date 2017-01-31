@@ -4,14 +4,15 @@ Due: To Be Determined
 
 ## Overview
 
-How does the shell execute a user command? It interactively follows the steps given below:
+You will be implementing a "shell". We use a shell quite often and should have a grasp on expected shell behavior. Below is a brief overview of top level shell behavior:
 - After start-up processing, your program repeatedly should perform these actions:
-- Print to stdout a prompt consisting of a percent sign followed by a space.
-- Read a line from stdin.
-- Lexically analyze the line to form an array of tokens.
-- Syntactically analyze (i.e. parse) the token array to form a command.
-- It creates a child process by duplicating itself.
-- The overloaded process receives all the remaining strings given from a keyboard input, and starts a command execution.
+    - Print to stdout a prompt consisting of a percent sign followed by a space.
+    - Read a line from stdin.
+    - Lexically analyze the line and create an array of command parts (tokens). 
+    - Syntactically analyze (i.e. parse) the token array to form a command.
+    - Once identified, the proper command is executed:
+        - It creates a child process by duplicating itself.
+        - The overloaded process receives all the remaining strings given from a keyboard input (if necessary), and starts a command execution.
 
 ## Requirements
 
