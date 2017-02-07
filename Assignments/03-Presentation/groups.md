@@ -1,16 +1,16 @@
 |Group #   | Email   |
-|---------|-----------|
-|     6    | Virtual Machines Overview |
-|    3     | Distributed File Systems |
-|    5     | Virtual Desktops as a Service (Daas vs VDI etc.) |
+|:--------:|-----------|
 |    1     | Cloud Computing or Cloud OS |
-|    4     | High Performance Computing (OS / Filesystem concerns) |
 |    2     | OS for Embedded Systems |
+|    3     | Distributed File Systems |
+|    4     | High Performance Computing (OS / Filesystem concerns) |
+|    5     | Virtual Desktops as a Service (Daas vs VDI etc.) |
+|     6    | Virtual Machines Overview |
 |         | OS Security |
 |         | Real Time Operating Systems |
 
 |Group #   | Email   |
-|---------|-----------|
+|:---------:|-----------|
 |4|a.ahmadi.adl@gmail.com|
 |2|manju1404@gmail.com|
 |3|gedela.huf031@gmail.com|
