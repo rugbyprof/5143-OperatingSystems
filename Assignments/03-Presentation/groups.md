@@ -1,13 +1,13 @@
-|Group #   | Email   |
-|:--------:|-----------|
-|    1     | Cloud Computing or Cloud OS |
-|    2     | OS for Embedded Systems |
-|    3     | Distributed File Systems |
-|    4     | High Performance Computing (OS / Filesystem concerns) |
-|    5     | Virtual Desktops as a Service (Daas vs VDI etc.) |
-|     6    | Virtual Machines Overview |
-|         | OS Security |
-|         | Real Time Operating Systems |
+|Group #   | Email                                                 | Date Of Presentation |
+|:--------:|-------------------------------------------------------|----------------------|
+|    1     | Cloud Computing or Cloud OS                           |                      |
+|    2     | OS for Embedded Systems                               |                      |
+|    3     | Distributed File Systems                              |                      |
+|    4     | High Performance Computing (OS / Filesystem concerns) |                      |
+|    5     | Virtual Desktops as a Service (Daas vs VDI etc.)      |                      |
+|    6     | Virtual Machines Overview                             |                      |
+|          | OS Security                                           |                      |
+|          | Real Time Operating Systems                           |                      |
 
 |Group #   | Email   |
 |:---------:|-----------|
