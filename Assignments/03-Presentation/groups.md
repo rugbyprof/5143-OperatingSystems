@@ -73,3 +73,26 @@
     - Interrupts
 - What can Cloud OS's be used as a solution for?
 - What should Cloud OS's NOT be used for.
+
+## Embedded Systems
+
+- Define Embedded system
+- Components of an embedded system:
+    - hardware
+    - application software
+    - RTOS (real time operating system)
+- Any background terminology should be defined around here.
+- Characteristics of an Embedded system (e.g. https://www.tutorialspoint.com/embedded_systems/es_overview.htm)
+- Where are **embedded systems** used? Give the most popular examples.
+- What are the characteristics of an embedded system **Operating System**
+- Compare Embedded OS to a Network OS (e.g. http://smallbusiness.chron.com/network-operating-systems-vs-embedded-operating-systems-46508.html) 
+- Give some examples of existing platforms (e.g. https://en.wikipedia.org/wiki/List_of_operating_systems#Embedded)
+- You should discuss some typical OS topics as applied to Embedded OS. You do not have to cover all of them, but any sub-topic that is relevant should be covered. 
+    - Virtual Memory
+    - Caching
+    - File System
+    - Command Line Interface
+    - Threading
+    - Interrupts
+- What are Embedded OS's be used as a solution for?
+- What should Embedded OS's NOT be used for?
