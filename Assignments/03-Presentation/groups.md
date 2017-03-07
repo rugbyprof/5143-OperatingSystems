@@ -1,4 +1,4 @@
-|Group #   | Email                                                 | Date Of Presentation |
+|Group #   | Topic                                                 | Date Of Presentation |
 |:--------:|-------------------------------------------------------|----------------------|
 |    1     | Cloud Computing or Cloud OS                           |                      |
 |    2     | OS for Embedded Systems                               |                      |
@@ -52,4 +52,24 @@
 |6|sweety.shailamogalapu@gmail.com|
 |6|valliyilmenon@gmail.com|
 
+## Cloud Computing / Cloud OS
 
+- Define Cloud Computing
+- Define Cloud OS
+- Compare the two
+- Likely background terminology that needs defined:
+    - Virtualization
+    - Virtual Machines
+    - bootloading
+    - hypervisor
+    - etc.
+- Give some examples of existing platforms (e.g. http://www.hongkiat.com/blog/free-cloud-os/ )
+- You should discuss some typical OS topics as applied to Cloud OS. You do not have to cover all of them, but any sub-topic that is relevant should be covered. 
+    - Virtual Memory
+    - Caching
+    - File System
+    - Command Line Interface
+    - Threading
+    - Interrupts
+- What can Cloud OS's be used as a solution for?
+- What should Cloud OS's NOT be used for.
