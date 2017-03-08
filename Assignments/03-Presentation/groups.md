@@ -96,3 +96,23 @@
     - Interrupts
 - What are Embedded OS's be used as a solution for?
 - What should Embedded OS's NOT be used for?
+
+## Virtual Desktops as a Service (Daas vs VDI etc.)
+
+- Define Virtual Desktop (big picture / overview)
+- Likely background terminology that needs defined:
+    - Daas
+    - VDI
+    - Virtual Machine
+    - etc.
+- Give some examples of existing Virtual Desktop Providers (e.g. http://www.tomsitpro.com/articles/desktop-as-a-service-providers,2-838.html 
+- Discuss Desktop as a Service vs. VDI (http://patriot-tech.com/blog/2015/01/28/desktop-service-vs-vdi-whats-difference/)
+- You should discuss some typical OS topics as applied to Cloud OS. You do not have to cover all of them, but any sub-topic that is relevant should be covered. 
+    - Virtual Memory
+    - Caching
+    - File System
+    - Command Line Interface
+    - Threading
+    - Interrupts
+- When is Daas or VDI a good solution.
+- When is Daas or VDI a NOT a good solution.
