@@ -101,11 +101,13 @@
 
 - Define Virtual Desktop (big picture / overview)
 - Likely background terminology that needs defined:
+    - Local desktop virtualization vs Remote desktop virtualization
     - Daas
     - VDI
     - Virtual Machine
     - etc.
 - Give some examples of existing Virtual Desktop Providers (e.g. http://www.tomsitpro.com/articles/desktop-as-a-service-providers,2-838.html 
+- Pros and Cons of VDI (http://www.pcworld.com/article/252314/the_pros_and_cons_of_using_virtual_desktop_infrastructure.html)
 - Discuss Desktop as a Service vs. VDI (http://patriot-tech.com/blog/2015/01/28/desktop-service-vs-vdi-whats-difference/)
 - You should discuss some typical OS topics as applied to Cloud OS. You do not have to cover all of them, but any sub-topic that is relevant should be covered. 
     - Virtual Memory
