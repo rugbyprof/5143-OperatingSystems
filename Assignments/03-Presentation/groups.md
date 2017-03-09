@@ -121,7 +121,7 @@
 
 ## Distributed File Systems
 
-- Waht is a File System?
+- What is a File System?
 - What is a Distributed File System?
 - Clarify any differences with the following (if any):
     - Clustered File System
@@ -151,3 +151,33 @@
     - Interrupts
 - When should a distributed file system be used?
 - When should a distributed file system NOT be used?
+
+
+## Virtual Machines
+
+- What is a Virtual Machine?
+- Clarify any differences with the following (if any):
+    - Hardware Virtualization (https://en.wikipedia.org/wiki/Hardware_virtualization)
+    - Operating-system-level virtualization (https://en.wikipedia.org/wiki/Operating-system-level_virtualization)
+    - Full Virtualization (https://en.wikipedia.org/wiki/Full_virtualization)
+    - Other Types if you feel is necessary.
+- Likely background terminology that needs defined and / or topics that need addressed:
+    - containers
+    - images (virtual disk image)
+    - cloning
+    - Shared I/O
+    - Attached I/O
+    - cloud based hosting
+    - Companies like Docker (https://www.docker.com/what-docker) (and similar)
+    - Are there security issues?
+    - How does Java or C# relate?
+    - Is performance an issue (taking advantage of operating system features)?
+- You should discuss some typical OS topics as applied to Virtual Machines. You do not have to cover all of them, but any sub-topic that is relevant should be covered. 
+    - Virtual Memory
+    - Caching
+    - File System
+    - Command Line Interface
+    - Threading
+    - Interrupts
+- When are VM's a good solution?
+- When are VM's NOT a good solution?
