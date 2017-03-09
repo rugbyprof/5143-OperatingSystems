@@ -118,3 +118,36 @@
     - Interrupts
 - When is Daas or VDI a good solution.
 - When is Daas or VDI a NOT a good solution.
+
+## Distributed File Systems
+
+- Waht is a File System?
+- What is a Distributed File System?
+- Clarify any differences with the following (if any):
+    - Clustered File System
+    - Network Attached Storage
+    - Parallel File System
+- Likely background terminology that needs defined:
+    - Distributed
+    - Parallel
+    - Serialization
+    - Packet Loss
+    - Block Size
+    - Concurrency Control
+    - etc.
+- Some things that may be addressed:
+    - cloud based storage
+    - redundancy
+    - security
+    - concurrency
+    - performance
+    - i/o speed (reading writing to a network drive)
+- You should discuss some typical OS topics as applied to Cloud OS. You do not have to cover all of them, but any sub-topic that is relevant should be covered. 
+    - Virtual Memory
+    - Caching
+    - File System
+    - Command Line Interface
+    - Threading
+    - Interrupts
+- When should a distributed file system be used?
+- When should a distributed file system NOT be used?
