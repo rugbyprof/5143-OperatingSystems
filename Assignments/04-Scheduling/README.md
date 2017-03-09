@@ -5,7 +5,7 @@
 
 Design and implement a program (in python) that simulates 1) ***Job Scheduling***,  2) ***CPU scheduling***, with the use of 3) ***Semaphores*** to lock critical sections of an operating system.
 
-## Requirements
+## General Requirements
 
 ### Job Scheduling
 - New jobs are put on the job scheduling queue which will be implemented as a priority queue. 
@@ -24,7 +24,7 @@ Design and implement a program (in python) that simulates 1) ***Job Scheduling**
 
 > **Note that all jobs in the ready state must fit into available main memory.**
 
-### Process Scheduling
+### Process Scheduling Overview
 - Process scheduling is managed as a [Multilevel Feedback Queue](http://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched-mlfq.pdf). 
 - The queue has levels: ***`L`***<sub>***`N-1`***</sub>,***`L`***<sub>***`N-2`***</sub>`,...,` ***`L`***<sub>***`0`***</sub>.
 - Each Queue is `FIFO`, and use `Round Robin` scheduling. 
@@ -69,5 +69,17 @@ When a job completes, put it on a finished list for later processing.
 | RUNNING | The process is currently executing on a CPU. |
 | WAITING | The process has temporarily stopped executing, and is waiting on an I/O request to complete. |
 | TERMINATED | The process has completed. |
+
+## CPU Scheduler Invocation
+
+- There are four events which will cause the simulator to invoke schedule():
+
+| Method  | Description | 
+|:-------------|:----------|
+| yield() | A process completes its CPU operations and yields the processor to perform an I/O request. |
+| wake_up() | A process that previously yielded completes its I/O request, and is ready to perform CPU operations. |
+| wake_up() | is also  called when a process in the NEW state becomes runnable. |
+| preempt() | When using a Round-Robin or Static Priority scheduling algorithm, a CPU-bound process may be preempted before it completes its CPU operations. |
+| terminate() | A process exits or is killed. |
 
 http://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched-mlfq.pdf
