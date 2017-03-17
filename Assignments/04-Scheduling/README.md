@@ -26,17 +26,17 @@ Design and implement a program (in python) that simulates 1) ***Job Scheduling**
 
 ### Process Scheduling Overview
 - Process scheduling is managed as a [Multilevel Feedback Queue](http://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched-mlfq.pdf). 
-- The queue has levels: ***`L`***<sub>***`N-1`***</sub>,***`L`***<sub>***`N-2`***</sub>`,...,` ***`L`***<sub>***`0`***</sub>.
+- The queue has levels: ***`L`*** <sub> ***`N-1`*** </sub>, ***`L`*** <sub> ***`N-2`*** </sub> `,...,` ***`L`*** <sub> ***`0`*** </sub>.
 - Each Queue is `FIFO`, and use `Round Robin` scheduling. 
-- New jobs are put on the first level: ***`L`***<sub>***`N-1`***</sub> when arriving in the ready state. 
-- When a job from ***`L`***<sub>***`N-1`***</sub> is given access to the CPU, it is allowed a quantum of ***`T`*** time units.
+- New jobs are put on the first level: ***`L`*** <sub> ***`N-1`*** </sub> when arriving in the ready state. 
+- When a job from ***`L`*** <sub> ***`N-1`*** </sub> is given access to the CPU, it is allowed a quantum of ***`T`*** time units.
     - Where `T = ((N-1)-L + 1) * 50`
     - So:
         - Etc.
-        - ***`L`***<sub>***`2`***</sub> = 150 
-        - ***`L`***<sub>***`1`***</sub> = 100 
-        - ***`L`***<sub>***`0`***</sub> = 50
-- If it exceeds that time quantum, it is preempted and moves to ***`L`***<sub>***`(N-1)-1`***</sub> .
+        - ***`L`*** <sub> ***`2`*** </sub> = 150 
+        - ***`L`*** <sub> ***`1`*** </sub> = 100 
+        - ***`L`*** <sub> ***`0`*** </sub> = 50
+- If it exceeds that time quantum, it is preempted and moves to ***`L`*** <sub> ***`(N-1)-1`*** </sub> .
 
 - For scheduling, the scheduler always starts picking up processes from the head of the highest level queue. 
 - Only if the highest level queue has become empty will the scheduler take up a process from the next lower level queue. 
