@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>Accounting.py</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>Accounting.py</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">components.MyFuncs</span> <span class="kn">import</span> <span class="o">*</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      <h3><span id="class:-accounting" href="class:-accounting"> Class: Accounting</span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      <p>The accounting object lets processes keep track of thier own stats.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">class</span> <span class="nc">Accounting</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      <ul>
+<li><strong>total_burst_time</strong> (int):<ul>
+<li>Total burst time is dened as the amount of time a process is actually using the CPU.
+Therefore, this measure does not include context switch times. Note that this measure
+can simply be calculated from the given input data.</li>
+</ul>
+</li>
+<li><strong>num_bursts</strong> (int)   : <ul>
+<li>Number of CPU bursts needed to complete job</li>
+</ul>
+</li>
+<li><strong>turnaround_time</strong> (int):<ul>
+<li>Turnaround time is defined as the end-to-end time a process experiences for a single CPU
+burst. More specically, this starts with the arrival time in the ready queue through to
+when the process finishes all of its CPU bursts. As such, this measure includes context
+switch times.</li>
+</ul>
+</li>
+<li><strong>wait_time</strong> (int):<ul>
+<li>Wait time is defined as the amount of time a process spends waiting to use the CPU, which
+equates to the amount of time the given process is in the ready queue and blocked for I/O.
+Therefore, this measure does not include context switch times that the given process
+experiences (i.e., only measure the time the given process is actually in the ready queue).</li>
+</ul>
+</li>
+<li><strong>start_time</strong> (int):<ul>
+<li>Simulation clock time when process entered ready queue.</li>
+</ul>
+</li>
+<li><strong>end_time</strong> (int):<ul>
+<li>Simulation clock time when process left / exited the simulation.</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">total_burst_time</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">turnaround_time</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait_time</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_time</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_time</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_bursts</span> <span class="o">=</span> <span class="mi">0</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      <p>Visual dump of class state.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">return</span> <span class="n">MyStr</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      <h6></h6>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      <h3><span id="class:-systemaccounting" href="class:-systemaccounting"> Class: SystemAccounting</span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-8'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-8'>#</a>
+      </div>
+      <p>This is a GLOBAL singleton class that keeps track of all accounting for the system. Each process
+will register itself with this class and get its own instance of the Accounting class. This
+class maintains a "shared" state based on the Borg pattern by Alex Martelli
+http://code.activestate.com/recipes/66531/</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">class</span> <span class="nc">SystemAccounting</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-9'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-9'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">__shared_state</span> <span class="o">=</span> <span class="p">{}</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-10'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-10'>#</a>
+      </div>
+      <p><strong><em>init</em></strong>: Constructor for Accounting class</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">acct_pid</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-11'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-11'>#</a>
+      </div>
+      <ul>
+<li><strong>Args</strong>:<ul>
+<li>acct_pid (int) : The process id used as a dict key to keep track of its own accounting</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__shared_state</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-12'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-12'>#</a>
+      </div>
+      <p>Must have a process id to register with this class</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">if</span> <span class="n">acct_pid</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Error, Pid needed to register process witht system accounting.&quot;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-13'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-13'>#</a>
+      </div>
+      <p>If the 'accounts' dictionary doesn't exist yet, create it.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;accounts&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">accounts</span> <span class="o">=</span> <span class="p">{}</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-14'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-14'>#</a>
+      </div>
+      <p>Register process and get own instance of account class</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="bp">self</span><span class="o">.</span><span class="n">accounts</span><span class="p">[</span><span class="n">acct_pid</span><span class="p">]</span> <span class="o">=</span> <span class="n">Accounting</span><span class="p">()</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-15'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-15'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">ss_key</span><span class="p">,</span> <span class="n">ss_val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__shared_state</span><span class="p">[</span><span class="s1">&#39;accounts&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">ss_key</span><span class="p">)</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="s2">&quot;[ Process_ID: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ss_key</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; </span><span class="se">\n</span><span class="s2">  &quot;</span> <span class="o">+</span> <span class="n">MyStr</span><span class="p">(</span><span class="n">ss_val</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="n">string</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-16'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-16'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">calc_totals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-17'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-17'>#</a>
+      </div>
+      <p>To be implemented by you</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">pass</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>

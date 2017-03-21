@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>Fcfs.py</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>Fcfs.py</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">components.MyFuncs</span> <span class="kn">import</span> <span class="o">*</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      <h3><span id="class:-fcfs" href="class:-fcfs"> Class: FCFS</span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">class</span> <span class="nc">Fcfs</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      <p><strong><em>init</em></strong>: Constructor for FCFS class.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">init</span><span class="o">=</span><span class="p">[]):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      <ul>
+<li><strong>Args:</strong><ul>
+<li>init (list): A possible list of processes to be added to class. </li>
+</ul>
+</li>
+<li><strong>Returns:</strong><ul>
+<li>None</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="bp">self</span><span class="o">.</span><span class="n">Q</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">init</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">init</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      <p><strong><em>add</em></strong>: Add process to rear of queue.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">proc</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      <ul>
+<li><strong>Args:</strong><ul>
+<li>proc (Process): Process to be added to queue</li>
+</ul>
+</li>
+<li><strong>Returns:</strong><ul>
+<li>None</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      <p>if not isinstance(proc,Process):
+    raise Exception("Queue requires items added to be of type 'Process'")</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="bp">self</span><span class="o">.</span><span class="n">Q</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">proc</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-8'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-8'>#</a>
+      </div>
+      <p><strong><em>remove</em></strong>: Returns first item in the queue.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-9'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-9'>#</a>
+      </div>
+      <ul>
+<li><strong>Args:</strong><ul>
+<li>None</li>
+</ul>
+</li>
+<li><strong>Returns:</strong><ul>
+<li>(Process): Process removed from queue</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Q</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-10'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-10'>#</a>
+      </div>
+      <p><strong><em>empty</em></strong>: Boolean test if queue empty.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-11'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-11'>#</a>
+      </div>
+      <ul>
+<li><strong>Args:</strong><ul>
+<li>None</li>
+</ul>
+</li>
+<li><strong>Returns:</strong><ul>
+<li>(Bool): True if queue empty False otherwise.</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Q</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-12'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-12'>#</a>
+      </div>
+      <p><strong><em>first</em></strong>: Copy of first item in the queue.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">first</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-13'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-13'>#</a>
+      </div>
+      <p>Returns a process that is a copy (reference to) the first 
+process in the queue without altering the queue. If a key 
+is present, it will return the value of that key. </p>
+<ul>
+<li><strong>Args:</strong><ul>
+<li>key (string) : Key of value to be returned</li>
+</ul>
+</li>
+<li><strong>Returns:</strong><ul>
+<li>(mixed,Process): A copy of the first process in the queue, or a value 
+                   from the first process in the queue. </li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Q</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Q</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">key</span><span class="p">]</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-14'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-14'>#</a>
+      </div>
+      <p><strong><em>last</em></strong>: Copy of last item in the queue.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">last</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-15'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-15'>#</a>
+      </div>
+      <p>Returns a process that is a copy (reference to) the last 
+process in the queue without altering the queue. If a key 
+is present, it will return the value of that key. </p>
+<ul>
+<li><strong>Args:</strong><ul>
+<li>key (string) : Key of value to be returned</li>
+</ul>
+</li>
+<li><strong>Returns:</strong><ul>
+<li>(mixed,Process): A copy of the last process in the queue, or a value 
+                   from the last process in the queue. </li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Q</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Q</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">key</span><span class="p">]</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-16'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-16'>#</a>
+      </div>
+      <p><strong><em>str</em></strong>: Visual dump of class state.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-17'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-17'>#</a>
+      </div>
+      <ul>
+<li><strong>Args:</strong><ul>
+<li>None</li>
+</ul>
+</li>
+<li><strong>Returns:</strong><ul>
+<li>None</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">return</span> <span class="n">MyStr</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-18'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-18'>#</a>
+      </div>
+      <p><strong><em>iter</em></strong>: Creates an "iterator" so my class can act like a container class.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-19'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-19'>#</a>
+      </div>
+      <ul>
+<li><strong>Args:</strong><ul>
+<li>None</li>
+</ul>
+</li>
+<li><strong>Yields:</strong><ul>
+<li>A generator which can be used to iterate over.</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Q</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">elem</span>
+
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>

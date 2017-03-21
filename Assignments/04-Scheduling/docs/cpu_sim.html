@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>cpu_sim.py</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>cpu_sim.py</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">pprint</span> <span class="kn">as</span> <span class="nn">pp</span>
+
+<span class="kn">import</span> <span class="nn">components</span>
+<span class="kn">from</span> <span class="nn">components.Accounting</span> <span class="kn">import</span> <span class="n">Accounting</span> 
+<span class="kn">from</span> <span class="nn">components.Clock</span> <span class="kn">import</span> <span class="n">Clock</span>
+<span class="kn">from</span> <span class="nn">components.Cpu</span> <span class="kn">import</span> <span class="n">Cpu</span>
+<span class="kn">from</span> <span class="nn">components.Fcfs</span> <span class="kn">import</span> <span class="n">Fcfs</span>
+<span class="kn">from</span> <span class="nn">components.Memory</span> <span class="kn">import</span> <span class="n">Memory</span>
+<span class="kn">from</span> <span class="nn">components.Process</span> <span class="kn">import</span> <span class="n">Process</span>
+<span class="kn">from</span> <span class="nn">components.SimSemaphore</span> <span class="kn">import</span> <span class="n">SimSemaphore</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">class</span> <span class="nc">Borg</span><span class="p">:</span>
+    <span class="n">__shared_state</span> <span class="o">=</span> <span class="p">{}</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      <p>This is a starter pack for a cpu scheduling project. The code / classes provided are to give you a
+head start in creating the scheduling simulation. Obviously this is a simulation, so the majority
+of the concepts are "simulated". For example, process "burst times" and "IO times" are known
+a-priori (not so in real world). Things like memory are abstracted from addressable locations and
+page tables to total "blocks" needed.</p>
+<p><a href="Accounting.html">./components/Accounting.py</a></p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__shared_state</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      <h6></h6>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      <h3><span id="class:-mlfq" href="class:-mlfq"> Class: MLFQ</span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      <p>Multi-Level Feedback Queue</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">class</span> <span class="nc">MLFQ</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      <ul>
+<li>
+<p>Some general requirements for a MLFQ:</p>
+<ul>
+<li>Each queue needs its own scheduling algorithm (typically Fcfs).</li>
+<li>The method used to determine when to upgrade a process to a higher-priority queue.</li>
+<li>The method used to determine when to demote a process to a lower-priority queue.</li>
+<li>The method used to determine which queue a process will enter when that process needs service.</li>
+</ul>
+</li>
+<li>
+<p>Rule 1: If Priority(A) &gt; Priority(B), A runs (B doesn't).</p>
+</li>
+<li>Rule 2: If Priority(A) = Priority(B), A &amp; B run in RR.</li>
+<li>Rule 3: When a job enters the system, it is placed at the highest priority (the topmost queue).</li>
+<li>Rule 4: Once a job uses up its time allotment at a given level (regardless of how many times it has given up the 
+  CPU), its priority is reduced (i.e., it moves down one queue).</li>
+<li>
+<p>Rule 5: After some time period S, move all the jobs in the system to the topmost queue.</p>
+</li>
+<li>
+<p><strong>Attributes</strong>:</p>
+<ul>
+<li>self.num_levels</li>
+<li>self.queues</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_levels</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_levels</span> <span class="o">=</span> <span class="n">num_levels</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">queues</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_levels</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">queues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Fcfs</span><span class="p">())</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-8'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-8'>#</a>
+      </div>
+      <p>This method admits a new process into the system.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">new</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-9'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-9'>#</a>
+      </div>
+      <ul>
+<li><strong>Args:</strong><ul>
+<li>None</li>
+</ul>
+</li>
+<li><strong>Returns:</strong><ul>
+<li>None</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">pass</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-10'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-10'>#</a>
+      </div>
+      <p>Visual dump of class state.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-11'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-11'>#</a>
+      </div>
+      <ul>
+<li><strong>Args:</strong><ul>
+<li>None</li>
+</ul>
+</li>
+<li><strong>Returns:</strong><ul>
+<li>None</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">return</span> <span class="n">my_str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-12'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-12'>#</a>
+      </div>
+      <h6></h6>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-13'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-13'>#</a>
+      </div>
+      <h3><span id="class:-scheduler" href="class:-scheduler"> Class: Scheduler</span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-14'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-14'>#</a>
+      </div>
+      <p>New:        In this status, the Process is just made or created.
+Running:    In the Running status, the Process is being executed.
+Waiting:    The process waits for an event to happen for example an input from the keyboard.
+Ready:      In this status the Process is waiting for execution in the CPU.
+Terminated: In this status the Process has finished its job and is ended.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">class</span> <span class="nc">Scheduler</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-15'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-15'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">store</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>  <span class="c1"># use the free update to set keys</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">ready</span> <span class="o">=</span> <span class="n">MLFQ</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="n">MLFQ</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">waiting</span> <span class="o">=</span> <span class="n">Fcfs</span><span class="p">()</span>  
+        <span class="bp">self</span><span class="o">.</span><span class="n">rejected</span> <span class="o">=</span> <span class="p">[]</span>      <span class="c1"># jobs needing more than system memory are rejected</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-16'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-16'>#</a>
+      </div>
+      <h6></h6>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-17'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-17'>#</a>
+      </div>
+      <h3><span id="class:-simulator" href="class:-simulator"> Class: Simulator</span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-18'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-18'>#</a>
+      </div>
+      <p>Not quite sure yet</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">class</span> <span class="nc">Simulator</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-19'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-19'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scheduler</span> <span class="o">=</span> <span class="n">Scheduler</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_clock</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_clock</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">if</span> <span class="s1">&#39;test&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">test</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">test</span> <span class="o">=</span> <span class="bp">False</span>
+
+        <span class="k">if</span> <span class="s1">&#39;input_file&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">input_file</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;input_file&#39;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Input file needed for simulator&quot;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-20'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-20'>#</a>
+      </div>
+      <p>read all jobs in a-priori </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="bp">self</span><span class="o">.</span><span class="n">raw_jobs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__apriori_file_processing</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input_file</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-21'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-21'>#</a>
+      </div>
+      <p>create system clock and do a hard reset it to make sure
+its a fresh instance. </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="bp">self</span><span class="o">.</span><span class="n">system_clock</span> <span class="o">=</span> <span class="n">Clock</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">system_clock</span><span class="o">.</span><span class="n">hard_reset</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start_clock</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-22'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-22'>#</a>
+      </div>
+      <p>Find clock extremes (min,max) from input file</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="bp">self</span><span class="o">.</span><span class="n">start_clock</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_jobs</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_clock</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_jobs</span><span class="o">.</span><span class="n">last</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">test</span><span class="p">:</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-23'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-23'>#</a>
+      </div>
+      <p>run driver loop </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>            <span class="bp">self</span><span class="o">.</span><span class="n">run_system_cycle</span><span class="p">()</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-24'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-24'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">run_system_cycle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">system_clock</span><span class="o">.</span><span class="n">current_time</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">end_clock</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">raw_jobs</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">))</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">system_clock</span><span class="o">.</span><span class="n">current_time</span><span class="p">()):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-25'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-25'>#</a>
+      </div>
+      <p>x = input()</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>                <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_jobs</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+                <span class="k">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+            
+            <span class="bp">self</span><span class="o">.</span><span class="n">system_clock</span> <span class="o">+=</span> <span class="mi">1</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-26'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-26'>#</a>
+      </div>
+      <p>Read the process data from given file name.
+Data format:
+    Event   Time    Job     Memory  Run-Time
+    ----    ----    ---     ------  --------
+    A       131     5       513     64
+    D       361</p>
+<pre><code>Event   Time    IO-Burst-Time
+-----   ----    -------------
+I       214     85
+
+Event   Time    Semaphore
+-----   ----    ---------
+S       7183    2
+W       7287    3
+
+A = new process enters system
+D = Display status of simulator
+I = Process currently on cpu performs I/O
+S = Semaphore signal (release)
+W = Semaphore wait (acquire)
+</code></pre>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">__apriori_file_processing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">file_name</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-27'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-27'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="n">jobs</span> <span class="o">=</span> <span class="n">Fcfs</span><span class="p">()</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">j</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+            <span class="n">jobs</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__build_dict</span><span class="p">(</span><span class="n">j</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">jobs</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-28'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-28'>#</a>
+      </div>
+      <p>Builds a kwargs dict for a new process initialization.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">__build_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">vals</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-29'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-29'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="n">labels_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">labels_dict</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;event&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;memory&#39;</span><span class="p">,</span> <span class="s1">&#39;runTime&#39;</span><span class="p">]</span>
+        <span class="n">labels_dict</span><span class="p">[</span><span class="s1">&#39;I&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;event&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;ioBurstTime&#39;</span><span class="p">]</span>
+        <span class="n">labels_dict</span><span class="p">[</span><span class="s1">&#39;W&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;event&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;semaphore&#39;</span><span class="p">]</span>
+        <span class="n">labels_dict</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;event&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;semaphore&#39;</span><span class="p">]</span>
+        <span class="n">labels_dict</span><span class="p">[</span><span class="s1">&#39;D&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;event&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">]</span>    
+        <span class="n">process_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="n">labels_dict</span><span class="p">[</span><span class="n">vals</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">vals</span><span class="p">):</span>
+            <span class="n">process_dict</span><span class="p">[</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">vals</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">process_dict</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-30'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-30'>#</a>
+      </div>
+      <p>Visual dump of class state.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-31'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-31'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">return</span> <span class="n">my_str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-32'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-32'>#</a>
+      </div>
+      <h6></h6>
+<p>Test Functions</p>
+<h6></h6>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-33'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-33'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">run_tests</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;############################################################&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Running ALL tests .....</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="n">Simulator</span><span class="p">(</span><span class="n">input_file</span><span class="o">=</span><span class="s1">&#39;/Volumes/1TBHDD/griffin/Dropbox/Cpu_Scheduling/cpu_sim_input.txt&#39;</span><span class="p">,</span><span class="n">test</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="n">jobs</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">raw_jobs</span>
+    <span class="n">processes</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">jobs</span><span class="p">:</span>
+        <span class="n">processes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Process</span><span class="p">(</span><span class="o">**</span><span class="n">j</span><span class="p">))</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-34'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-34'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">mlfq_test</span><span class="p">(</span><span class="n">process</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;############################################################&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Running MLFQ queue class test.....</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">mlfq</span> <span class="o">=</span> <span class="n">MLFQ</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">mlfq</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-35'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-35'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">simulator_test</span><span class="p">():</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">Simulator</span><span class="p">(</span><span class="n">input_file</span><span class="o">=</span><span class="s1">&#39;/Volumes/1TBHDD/griffin/Dropbox/Cpu_Scheduling/cpu_sim_input.txt&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+
+    <span class="n">run_tests</span><span class="p">()</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>

@@ -1,0 +1,1690 @@
+Event: A   Time: 100
+Event: A   Time: 120
+Event: A   Time: 122
+Event: A   Time: 130
+Event: A   Time: 131
+This job exceeds the system's main memory capacity.
+Event: A   Time: 136
+Event: A   Time: 145
+Event: A   Time: 150
+Event: A   Time: 157
+This job exceeds the system's main memory capacity.
+Event: A   Time: 161
+Event: A   Time: 170
+Event: T   Time: 178
+Event: A   Time: 181
+Event: A   Time: 188
+Event: A   Time: 190
+Event: A   Time: 195
+Event: A   Time: 201
+Event: A   Time: 260
+Event: A   Time: 267
+This job exceeds the system's main memory capacity.
+Event: T   Time: 268
+Event: T   Time: 269
+Event: A   Time: 271
+Event: A   Time: 278
+Event: A   Time: 300
+Event: A   Time: 306
+Event: A   Time: 309
+Event: A   Time: 313
+Event: A   Time: 351
+Event: D   Time: 361
+
+************************************************************
+
+The status of the simulator at time 361.
+
+The contents of the JOB SCHEDULING QUEUE
+----------------------------------------
+
+Job #  Arr. Time  Mem. Req.  Run Time
+-----  ---------  ---------  --------
+
+    6        136        512        99
+    7        145        200         2
+    8        150         20        98
+   10        161        499        40
+   11        170        401        79
+   12        181         11        90
+   13        188          9        66
+   14        190          5        20
+   15        195          1        70
+   16        201         69        23
+   17        260         25       100
+   19        271        232        90
+   20        278        102        47
+   21        300        123        43
+   22        306          1         1
+   23        309        100        99
+   24        313        179        23
+   25        351        342        59
+
+
+The contents of the FIRST LEVEL READY QUEUE
+-------------------------------------------
+
+The First Level Ready Queue is empty.
+
+
+The contents of the SECOND LEVEL READY QUEUE
+--------------------------------------------
+
+The Second Level Ready Queue is empty.
+
+
+The contents of the I/O WAIT QUEUE
+----------------------------------
+
+The I/O Wait Queue is empty.
+
+
+The contents of SEMAPHORE ZERO
+------------------------------
+
+The value of semaphore 0 is 1.
+
+The wait queue for semaphore 0 is empty.
+
+
+The contents of SEMAPHORE ONE
+-----------------------------
+
+The value of semaphore 1 is 1.
+
+The wait queue for semaphore 1 is empty.
+
+
+The contents of SEMAPHORE TWO
+-----------------------------
+
+The value of semaphore 2 is 1.
+
+The wait queue for semaphore 2 is empty.
+
+
+The contents of SEMAPHORE THREE
+-------------------------------
+
+The value of semaphore 3 is 1.
+
+The wait queue for semaphore 3 is empty.
+
+
+The contents of SEMAPHORE FOUR
+------------------------------
+
+The value of semaphore 4 is 1.
+
+The wait queue for semaphore 4 is empty.
+
+
+The CPU  Start Time  CPU burst time left
+-------  ----------  -------------------
+
+      4         269                    8
+
+
+The contents of the FINISHED LIST
+---------------------------------
+
+Job #  Arr. Time  Mem. Req.  Run Time  Start Time  Com. Time
+-----  ---------  ---------  --------  ----------  ---------
+
+    1        100         20        78         100        178
+    2        120         60        90         178        268
+    3        122          1         1         268        269
+
+
+There are 412 blocks of main memory available in the system.
+
+Event: T   Time: 369
+Event: A   Time: 401
+Event: A   Time: 404
+Event: A   Time: 410
+Event: A   Time: 417
+Event: A   Time: 423
+Event: A   Time: 450
+Event: A   Time: 467
+Event: T   Time: 468
+Event: T   Time: 470
+Event: A   Time: 470
+Event: A   Time: 474
+Event: A   Time: 480
+Event: A   Time: 499
+Event: A   Time: 508
+Event: A   Time: 511
+Event: A   Time: 516
+Event: A   Time: 519
+Event: A   Time: 524
+Event: A   Time: 537
+Event: A   Time: 545
+Event: A   Time: 566
+Event: T   Time: 568
+Event: A   Time: 574
+Event: A   Time: 580
+Event: A   Time: 583
+This job exceeds the system's main memory capacity.
+Event: A   Time: 586
+Event: A   Time: 590
+Event: D   Time: 592
+
+************************************************************
+
+The status of the simulator at time 592.
+
+The contents of the JOB SCHEDULING QUEUE
+----------------------------------------
+
+Job #  Arr. Time  Mem. Req.  Run Time
+-----  ---------  ---------  --------
+
+   11        170        401        79
+   12        181         11        90
+   13        188          9        66
+   14        190          5        20
+   15        195          1        70
+   16        201         69        23
+   17        260         25       100
+   19        271        232        90
+   20        278        102        47
+   21        300        123        43
+   22        306          1         1
+   23        309        100        99
+   24        313        179        23
+   25        351        342        59
+   26        401         58       101
+   27        404        125       200
+   28        410          3       330
+   29        417        340       999
+   30        423         20       124
+   31        450         70       230
+   32        467        184       700
+   33        470        500       701
+   34        474         19       401
+   35        480        432       150
+   36        499         37       203
+   37        508         89       204
+   39        511         14       198
+   40        516         17      1001
+   41        519         43       472
+   42        524         39       399
+   43        537         78       233
+   44        545          6       101
+   45        566          9       256
+   46        574          1       199
+   47        580         20       404
+   49        586         30       341
+   50        590         61       192
+
+
+The contents of the FIRST LEVEL READY QUEUE
+-------------------------------------------
+
+The First Level Ready Queue is empty.
+
+
+The contents of the SECOND LEVEL READY QUEUE
+--------------------------------------------
+
+The Second Level Ready Queue is empty.
+
+
+The contents of the I/O WAIT QUEUE
+----------------------------------
+
+The I/O Wait Queue is empty.
+
+
+The contents of SEMAPHORE ZERO
+------------------------------
+
+The value of semaphore 0 is 1.
+
+The wait queue for semaphore 0 is empty.
+
+
+The contents of SEMAPHORE ONE
+-----------------------------
+
+The value of semaphore 1 is 1.
+
+The wait queue for semaphore 1 is empty.
+
+
+The contents of SEMAPHORE TWO
+-----------------------------
+
+The value of semaphore 2 is 1.
+
+The wait queue for semaphore 2 is empty.
+
+
+The contents of SEMAPHORE THREE
+-------------------------------
+
+The value of semaphore 3 is 1.
+
+The wait queue for semaphore 3 is empty.
+
+
+The contents of SEMAPHORE FOUR
+------------------------------
+
+The value of semaphore 4 is 1.
+
+The wait queue for semaphore 4 is empty.
+
+
+The CPU  Start Time  CPU burst time left
+-------  ----------  -------------------
+
+     10         568                   16
+
+
+The contents of the FINISHED LIST
+---------------------------------
+
+Job #  Arr. Time  Mem. Req.  Run Time  Start Time  Com. Time
+-----  ---------  ---------  --------  ----------  ---------
+
+    1        100         20        78         100        178
+    2        120         60        90         178        268
+    3        122          1         1         268        269
+    4        130        100       100         269        369
+    6        136        512        99         369        468
+    7        145        200         2         468        470
+    8        150         20        98         470        568
+
+
+There are 13 blocks of main memory available in the system.
+
+Event: A   Time: 602
+Event: T   Time: 608
+Event: A   Time: 611
+Event: A   Time: 616
+Event: A   Time: 621
+Event: A   Time: 627
+Event: A   Time: 632
+Event: A   Time: 635
+Event: A   Time: 641
+Event: A   Time: 649
+Event: A   Time: 653
+Event: A   Time: 660
+Event: A   Time: 664
+Event: A   Time: 670
+Event: A   Time: 674
+Event: A   Time: 678
+Event: A   Time: 681
+Event: T   Time: 687
+Event: A   Time: 690
+Event: A   Time: 694
+Event: A   Time: 711
+This job exceeds the system's main memory capacity.
+Event: A   Time: 723
+This job exceeds the system's main memory capacity.
+Event: A   Time: 734
+Event: A   Time: 743
+Event: A   Time: 746
+Event: A   Time: 752
+Event: A   Time: 773
+Event: T   Time: 777
+Event: T   Time: 843
+Event: T   Time: 863
+Event: A   Time: 881
+Event: A   Time: 886
+Event: A   Time: 891
+Event: A   Time: 914
+Event: T   Time: 933
+Event: A   Time: 934
+Event: A   Time: 939
+Event: A   Time: 941
+This job exceeds the system's main memory capacity.
+Event: T   Time: 956
+Event: A   Time: 969
+Event: A   Time: 972
+Event: A   Time: 999
+Event: A   Time: 1004
+Event: D   Time: 1015
+
+************************************************************
+
+The status of the simulator at time 1015.
+
+The contents of the JOB SCHEDULING QUEUE
+----------------------------------------
+
+Job #  Arr. Time  Mem. Req.  Run Time
+-----  ---------  ---------  --------
+
+   23        309        100        99
+   24        313        179        23
+   25        351        342        59
+   26        401         58       101
+   27        404        125       200
+   28        410          3       330
+   29        417        340       999
+   30        423         20       124
+   31        450         70       230
+   32        467        184       700
+   33        470        500       701
+   34        474         19       401
+   35        480        432       150
+   36        499         37       203
+   37        508         89       204
+   39        511         14       198
+   40        516         17      1001
+   41        519         43       472
+   42        524         39       399
+   43        537         78       233
+   44        545          6       101
+   45        566          9       256
+   46        574          1       199
+   47        580         20       404
+   49        586         30       341
+   50        590         61       192
+   51        602         56        88
+   52        611        105        72
+   53        616         89        99
+   54        621         21        34
+   55        627         43        58
+   56        632         16       107
+   57        635         91       169
+   58        641         89       400
+   59        649         37       770
+   60        653        123       574
+   61        660         10        34
+   62        664         23        36
+   63        670         24       992
+   64        674         49       761
+   65        678        501        39
+   66        681        398        10
+   67        690        302       452
+   68        694        511       513
+   71        734         30        74
+   72        743         51       229
+   73        746        499        44
+   74        752        509      1001
+   75        773         34        92
+   76        881         34        62
+   77        886         33      2523
+   78        891         23        43
+   79        914         41       304
+   80        934         11        33
+   81        939          3         2
+   83        969         12        69
+   84        972         44        99
+   85        999         95        34
+   86       1004        168       833
+
+
+The contents of the FIRST LEVEL READY QUEUE
+-------------------------------------------
+
+Job #  Arr. Time  Mem. Req.  Run Time
+-----  ---------  ---------  --------
+
+   19        271        232        90
+   20        278        102        47
+   21        300        123        43
+   22        306          1         1
+
+
+The contents of the SECOND LEVEL READY QUEUE
+--------------------------------------------
+
+The Second Level Ready Queue is empty.
+
+
+The contents of the I/O WAIT QUEUE
+----------------------------------
+
+The I/O Wait Queue is empty.
+
+
+The contents of SEMAPHORE ZERO
+------------------------------
+
+The value of semaphore 0 is 1.
+
+The wait queue for semaphore 0 is empty.
+
+
+The contents of SEMAPHORE ONE
+-----------------------------
+
+The value of semaphore 1 is 1.
+
+The wait queue for semaphore 1 is empty.
+
+
+The contents of SEMAPHORE TWO
+-----------------------------
+
+The value of semaphore 2 is 1.
+
+The wait queue for semaphore 2 is empty.
+
+
+The contents of SEMAPHORE THREE
+-------------------------------
+
+The value of semaphore 3 is 1.
+
+The wait queue for semaphore 3 is empty.
+
+
+The contents of SEMAPHORE FOUR
+------------------------------
+
+The value of semaphore 4 is 1.
+
+The wait queue for semaphore 4 is empty.
+
+
+The CPU  Start Time  CPU burst time left
+-------  ----------  -------------------
+
+     17         956                   41
+
+
+The contents of the FINISHED LIST
+---------------------------------
+
+Job #  Arr. Time  Mem. Req.  Run Time  Start Time  Com. Time
+-----  ---------  ---------  --------  ----------  ---------
+
+    1        100         20        78         100        178
+    2        120         60        90         178        268
+    3        122          1         1         268        269
+    4        130        100       100         269        369
+    6        136        512        99         369        468
+    7        145        200         2         468        470
+    8        150         20        98         470        568
+   10        161        499        40         568        608
+   11        170        401        79         608        687
+   12        181         11        90         687        777
+   13        188          9        66         777        843
+   14        190          5        20         843        863
+   15        195          1        70         863        933
+   16        201         69        23         933        956
+
+
+There are 29 blocks of main memory available in the system.
+
+Event: A   Time: 1031
+Event: A   Time: 1034
+Event: A   Time: 1036
+Event: A   Time: 1039
+Event: A   Time: 1045
+Event: A   Time: 1048
+Event: A   Time: 1054
+Event: T   Time: 1056
+Event: T   Time: 1146
+Event: T   Time: 1193
+Event: T   Time: 1236
+Event: T   Time: 1237
+Event: T   Time: 1336
+Event: T   Time: 1359
+Event: T   Time: 1418
+Event: E   Time: 1518
+Event: E   Time: 1618
+Event: E   Time: 1718
+Event: T   Time: 1719
+Event: E   Time: 1819
+Event: E   Time: 1919
+Event: T   Time: 2019
+Event: E   Time: 2119
+Event: T   Time: 2349
+Event: E   Time: 2649
+Event: T   Time: 2673
+Event: T   Time: 2803
+Event: E   Time: 3103
+Event: T   Time: 3402
+Event: E   Time: 3502
+Event: E   Time: 3802
+Event: T   Time: 4102
+Event: E   Time: 4202
+Event: E   Time: 4502
+Event: E   Time: 4802
+Event: T   Time: 4803
+Event: E   Time: 4903
+Event: E   Time: 5003
+Event: E   Time: 5103
+Event: E   Time: 5403
+Event: T   Time: 5453
+Event: E   Time: 5553
+Event: E   Time: 5653
+Event: E   Time: 5753
+Event: E   Time: 5853
+Event: E   Time: 5953
+Event: E   Time: 6053
+Event: E   Time: 6153
+Event: E   Time: 6253
+Event: E   Time: 6353
+Event: E   Time: 6453
+Event: E   Time: 6553
+Event: E   Time: 6653
+Event: T   Time: 6756
+Event: T   Time: 6844
+Event: T   Time: 6845
+Event: T   Time: 6917
+Event: T   Time: 7016
+Event: T   Time: 7050
+Event: D   Time: 7062
+
+************************************************************
+
+The status of the simulator at time 7062.
+
+The contents of the JOB SCHEDULING QUEUE
+----------------------------------------
+
+Job #  Arr. Time  Mem. Req.  Run Time
+-----  ---------  ---------  --------
+
+   57        635         91       169
+   58        641         89       400
+   59        649         37       770
+   60        653        123       574
+   61        660         10        34
+   62        664         23        36
+   63        670         24       992
+   64        674         49       761
+   65        678        501        39
+   66        681        398        10
+   67        690        302       452
+   68        694        511       513
+   71        734         30        74
+   72        743         51       229
+   73        746        499        44
+   74        752        509      1001
+   75        773         34        92
+   76        881         34        62
+   77        886         33      2523
+   78        891         23        43
+   79        914         41       304
+   80        934         11        33
+   81        939          3         2
+   83        969         12        69
+   84        972         44        99
+   85        999         95        34
+   86       1004        168       833
+   87       1031         83       234
+   89       1034        423       130
+   90       1036         12        54
+   91       1039         10        57
+   92       1045          4       101
+   93       1048          2         3
+   94       1054          2        32
+
+
+The contents of the FIRST LEVEL READY QUEUE
+-------------------------------------------
+
+Job #  Arr. Time  Mem. Req.  Run Time
+-----  ---------  ---------  --------
+
+   56        632         16       107
+
+
+The contents of the SECOND LEVEL READY QUEUE
+--------------------------------------------
+
+Job #  Arr. Time  Mem. Req.  Run Time
+-----  ---------  ---------  --------
+
+   37        508         89       204
+   39        511         14       198
+   40        516         17      1001
+   41        519         43       472
+   42        524         39       399
+   43        537         78       233
+   44        545          6       101
+   45        566          9       256
+   46        574          1       199
+   47        580         20       404
+   49        586         30       341
+   50        590         61       192
+
+
+The contents of the I/O WAIT QUEUE
+----------------------------------
+
+The I/O Wait Queue is empty.
+
+
+The contents of SEMAPHORE ZERO
+------------------------------
+
+The value of semaphore 0 is 1.
+
+The wait queue for semaphore 0 is empty.
+
+
+The contents of SEMAPHORE ONE
+-----------------------------
+
+The value of semaphore 1 is 1.
+
+The wait queue for semaphore 1 is empty.
+
+
+The contents of SEMAPHORE TWO
+-----------------------------
+
+The value of semaphore 2 is 1.
+
+The wait queue for semaphore 2 is empty.
+
+
+The contents of SEMAPHORE THREE
+-------------------------------
+
+The value of semaphore 3 is 1.
+
+The wait queue for semaphore 3 is empty.
+
+
+The contents of SEMAPHORE FOUR
+------------------------------
+
+The value of semaphore 4 is 1.
+
+The wait queue for semaphore 4 is empty.
+
+
+The CPU  Start Time  CPU burst time left
+-------  ----------  -------------------
+
+     55        7050                   46
+
+
+The contents of the FINISHED LIST
+---------------------------------
+
+Job #  Arr. Time  Mem. Req.  Run Time  Start Time  Com. Time
+-----  ---------  ---------  --------  ----------  ---------
+
+    1        100         20        78         100        178
+    2        120         60        90         178        268
+    3        122          1         1         268        269
+    4        130        100       100         269        369
+    6        136        512        99         369        468
+    7        145        200         2         468        470
+    8        150         20        98         470        568
+   10        161        499        40         568        608
+   11        170        401        79         608        687
+   12        181         11        90         687        777
+   13        188          9        66         777        843
+   14        190          5        20         843        863
+   15        195          1        70         863        933
+   16        201         69        23         933        956
+   17        260         25       100         956       1056
+   19        271        232        90        1056       1146
+   20        278        102        47        1146       1193
+   21        300        123        43        1193       1236
+   22        306          1         1        1236       1237
+   23        309        100        99        1237       1336
+   24        313        179        23        1336       1359
+   25        351        342        59        1359       1418
+   26        401         58       101        1418       1719
+   27        404        125       200        1518       2019
+   28        410          3       330        1618       2349
+   30        423         20       124        1819       2673
+   31        450         70       230        2019       2803
+   29        417        340       999        1719       3402
+   32        467        184       700        3402       4102
+   33        470        500       701        4102       4803
+   35        480        432       150        4903       5453
+   36        499         37       203        5003       6756
+   51        602         56        88        6756       6844
+   34        474         19       401        4803       6845
+   52        611        105        72        6845       6917
+   53        616         89        99        6917       7016
+   54        621         21        34        7016       7050
+
+
+There are 46 blocks of main memory available in the system.
+
+Event: A   Time: 7072
+Event: T   Time: 7108
+Event: A   Time: 7179
+Event: E   Time: 7208
+Event: T   Time: 7312
+Event: A   Time: 7400
+Event: E   Time: 7412
+Event: A   Time: 7423
+Event: A   Time: 7463
+Event: A   Time: 7470
+This job exceeds the system's main memory capacity.
+Event: A   Time: 7500
+Event: T   Time: 7510
+Event: D   Time: 7543
+
+************************************************************
+
+The status of the simulator at time 7543.
+
+The contents of the JOB SCHEDULING QUEUE
+----------------------------------------
+
+Job #  Arr. Time  Mem. Req.  Run Time
+-----  ---------  ---------  --------
+
+   59        649         37       770
+   60        653        123       574
+   61        660         10        34
+   62        664         23        36
+   63        670         24       992
+   64        674         49       761
+   65        678        501        39
+   66        681        398        10
+   67        690        302       452
+   68        694        511       513
+   71        734         30        74
+   72        743         51       229
+   73        746        499        44
+   74        752        509      1001
+   75        773         34        92
+   76        881         34        62
+   77        886         33      2523
+   78        891         23        43
+   79        914         41       304
+   80        934         11        33
+   81        939          3         2
+   83        969         12        69
+   84        972         44        99
+   85        999         95        34
+   86       1004        168       833
+   87       1031         83       234
+   89       1034        423       130
+   90       1036         12        54
+   91       1039         10        57
+   92       1045          4       101
+   93       1048          2         3
+   94       1054          2        32
+   95       7072         32        12
+   96       7179         20        19
+   97       7400         54       492
+   98       7423         22       101
+   99       7463         10         1
+  101       7500         40        21
+
+
+The contents of the FIRST LEVEL READY QUEUE
+-------------------------------------------
+
+The First Level Ready Queue is empty.
+
+
+The contents of the SECOND LEVEL READY QUEUE
+--------------------------------------------
+
+Job #  Arr. Time  Mem. Req.  Run Time
+-----  ---------  ---------  --------
+
+   40        516         17      1001
+   41        519         43       472
+   42        524         39       399
+   43        537         78       233
+   44        545          6       101
+   45        566          9       256
+   46        574          1       199
+   47        580         20       404
+   49        586         30       341
+   50        590         61       192
+   56        632         16       107
+   57        635         91       169
+
+
+The contents of the I/O WAIT QUEUE
+----------------------------------
+
+The I/O Wait Queue is empty.
+
+
+The contents of SEMAPHORE ZERO
+------------------------------
+
+The value of semaphore 0 is 1.
+
+The wait queue for semaphore 0 is empty.
+
+
+The contents of SEMAPHORE ONE
+-----------------------------
+
+The value of semaphore 1 is 1.
+
+The wait queue for semaphore 1 is empty.
+
+
+The contents of SEMAPHORE TWO
+-----------------------------
+
+The value of semaphore 2 is 1.
+
+The wait queue for semaphore 2 is empty.
+
+
+The contents of SEMAPHORE THREE
+-------------------------------
+
+The value of semaphore 3 is 1.
+
+The wait queue for semaphore 3 is empty.
+
+
+The contents of SEMAPHORE FOUR
+------------------------------
+
+The value of semaphore 4 is 1.
+
+The wait queue for semaphore 4 is empty.
+
+
+The CPU  Start Time  CPU burst time left
+-------  ----------  -------------------
+
+     58        7510                  367
+
+
+The contents of the FINISHED LIST
+---------------------------------
+
+Job #  Arr. Time  Mem. Req.  Run Time  Start Time  Com. Time
+-----  ---------  ---------  --------  ----------  ---------
+
+    1        100         20        78         100        178
+    2        120         60        90         178        268
+    3        122          1         1         268        269
+    4        130        100       100         269        369
+    6        136        512        99         369        468
+    7        145        200         2         468        470
+    8        150         20        98         470        568
+   10        161        499        40         568        608
+   11        170        401        79         608        687
+   12        181         11        90         687        777
+   13        188          9        66         777        843
+   14        190          5        20         843        863
+   15        195          1        70         863        933
+   16        201         69        23         933        956
+   17        260         25       100         956       1056
+   19        271        232        90        1056       1146
+   20        278        102        47        1146       1193
+   21        300        123        43        1193       1236
+   22        306          1         1        1236       1237
+   23        309        100        99        1237       1336
+   24        313        179        23        1336       1359
+   25        351        342        59        1359       1418
+   26        401         58       101        1418       1719
+   27        404        125       200        1518       2019
+   28        410          3       330        1618       2349
+   30        423         20       124        1819       2673
+   31        450         70       230        2019       2803
+   29        417        340       999        1719       3402
+   32        467        184       700        3402       4102
+   33        470        500       701        4102       4803
+   35        480        432       150        4903       5453
+   36        499         37       203        5003       6756
+   51        602         56        88        6756       6844
+   34        474         19       401        4803       6845
+   52        611        105        72        6845       6917
+   53        616         89        99        6917       7016
+   54        621         21        34        7016       7050
+   55        627         43        58        7050       7108
+   37        508         89       204        5453       7312
+   39        511         14       198        5553       7510
+
+
+There are 12 blocks of main memory available in the system.
+
+Event: E   Time: 7610
+Event: A   Time: 7635
+Event: D   Time: 7810
+
+************************************************************
+
+The status of the simulator at time 7810.
+
+The contents of the JOB SCHEDULING QUEUE
+----------------------------------------
+
+Job #  Arr. Time  Mem. Req.  Run Time
+-----  ---------  ---------  --------
+
+   59        649         37       770
+   60        653        123       574
+   61        660         10        34
+   62        664         23        36
+   63        670         24       992
+   64        674         49       761
+   65        678        501        39
+   66        681        398        10
+   67        690        302       452
+   68        694        511       513
+   71        734         30        74
+   72        743         51       229
+   73        746        499        44
+   74        752        509      1001
+   75        773         34        92
+   76        881         34        62
+   77        886         33      2523
+   78        891         23        43
+   79        914         41       304
+   80        934         11        33
+   81        939          3         2
+   83        969         12        69
+   84        972         44        99
+   85        999         95        34
+   86       1004        168       833
+   87       1031         83       234
+   89       1034        423       130
+   90       1036         12        54
+   91       1039         10        57
+   92       1045          4       101
+   93       1048          2         3
+   94       1054          2        32
+   95       7072         32        12
+   96       7179         20        19
+   97       7400         54       492
+   98       7423         22       101
+   99       7463         10         1
+  101       7500         40        21
+  102       7635         12        13
+
+
+The contents of the FIRST LEVEL READY QUEUE
+-------------------------------------------
+
+The First Level Ready Queue is empty.
+
+
+The contents of the SECOND LEVEL READY QUEUE
+--------------------------------------------
+
+Job #  Arr. Time  Mem. Req.  Run Time
+-----  ---------  ---------  --------
+
+   41        519         43       472
+   42        524         39       399
+   43        537         78       233
+   44        545          6       101
+   45        566          9       256
+   46        574          1       199
+   47        580         20       404
+   49        586         30       341
+   50        590         61       192
+   56        632         16       107
+   57        635         91       169
+   58        641         89       400
+
+
+The contents of the I/O WAIT QUEUE
+----------------------------------
+
+The I/O Wait Queue is empty.
+
+
+The contents of SEMAPHORE ZERO
+------------------------------
+
+The value of semaphore 0 is 1.
+
+The wait queue for semaphore 0 is empty.
+
+
+The contents of SEMAPHORE ONE
+-----------------------------
+
+The value of semaphore 1 is 1.
+
+The wait queue for semaphore 1 is empty.
+
+
+The contents of SEMAPHORE TWO
+-----------------------------
+
+The value of semaphore 2 is 1.
+
+The wait queue for semaphore 2 is empty.
+
+
+The contents of SEMAPHORE THREE
+-------------------------------
+
+The value of semaphore 3 is 1.
+
+The wait queue for semaphore 3 is empty.
+
+
+The contents of SEMAPHORE FOUR
+------------------------------
+
+The value of semaphore 4 is 1.
+
+The wait queue for semaphore 4 is empty.
+
+
+The CPU  Start Time  CPU burst time left
+-------  ----------  -------------------
+
+     40        5653                  701
+
+
+The contents of the FINISHED LIST
+---------------------------------
+
+Job #  Arr. Time  Mem. Req.  Run Time  Start Time  Com. Time
+-----  ---------  ---------  --------  ----------  ---------
+
+    1        100         20        78         100        178
+    2        120         60        90         178        268
+    3        122          1         1         268        269
+    4        130        100       100         269        369
+    6        136        512        99         369        468
+    7        145        200         2         468        470
+    8        150         20        98         470        568
+   10        161        499        40         568        608
+   11        170        401        79         608        687
+   12        181         11        90         687        777
+   13        188          9        66         777        843
+   14        190          5        20         843        863
+   15        195          1        70         863        933
+   16        201         69        23         933        956
+   17        260         25       100         956       1056
+   19        271        232        90        1056       1146
+   20        278        102        47        1146       1193
+   21        300        123        43        1193       1236
+   22        306          1         1        1236       1237
+   23        309        100        99        1237       1336
+   24        313        179        23        1336       1359
+   25        351        342        59        1359       1418
+   26        401         58       101        1418       1719
+   27        404        125       200        1518       2019
+   28        410          3       330        1618       2349
+   30        423         20       124        1819       2673
+   31        450         70       230        2019       2803
+   29        417        340       999        1719       3402
+   32        467        184       700        3402       4102
+   33        470        500       701        4102       4803
+   35        480        432       150        4903       5453
+   36        499         37       203        5003       6756
+   51        602         56        88        6756       6844
+   34        474         19       401        4803       6845
+   52        611        105        72        6845       6917
+   53        616         89        99        6917       7016
+   54        621         21        34        7016       7050
+   55        627         43        58        7050       7108
+   37        508         89       204        5453       7312
+   39        511         14       198        5553       7510
+
+
+There are 12 blocks of main memory available in the system.
+
+Event: E   Time: 7910
+Event: E   Time: 8210
+Event: T   Time: 8509
+Event: E   Time: 8609
+Event: T   Time: 8742
+Event: T   Time: 8743
+Event: T   Time: 8899
+Event: T   Time: 8998
+Event: E   Time: 9298
+Event: T   Time: 9539
+Event: E   Time: 9639
+Event: T   Time: 9673
+Event: T   Time: 9765
+Event: T   Time: 9801
+Event: E   Time: 9901
+Event: E   Time: 10001
+Event: D   Time: 10007
+
+************************************************************
+
+The status of the simulator at time 10007.
+
+The contents of the JOB SCHEDULING QUEUE
+----------------------------------------
+
+Job #  Arr. Time  Mem. Req.  Run Time
+-----  ---------  ---------  --------
+
+   65        678        501        39
+   66        681        398        10
+   67        690        302       452
+   68        694        511       513
+   71        734         30        74
+   72        743         51       229
+   73        746        499        44
+   74        752        509      1001
+   75        773         34        92
+   76        881         34        62
+   77        886         33      2523
+   78        891         23        43
+   79        914         41       304
+   80        934         11        33
+   81        939          3         2
+   83        969         12        69
+   84        972         44        99
+   85        999         95        34
+   86       1004        168       833
+   87       1031         83       234
+   89       1034        423       130
+   90       1036         12        54
+   91       1039         10        57
+   92       1045          4       101
+   93       1048          2         3
+   94       1054          2        32
+   95       7072         32        12
+   96       7179         20        19
+   97       7400         54       492
+   98       7423         22       101
+   99       7463         10         1
+  101       7500         40        21
+  102       7635         12        13
+
+
+The contents of the FIRST LEVEL READY QUEUE
+-------------------------------------------
+
+The First Level Ready Queue is empty.
+
+
+The contents of the SECOND LEVEL READY QUEUE
+--------------------------------------------
+
+Job #  Arr. Time  Mem. Req.  Run Time
+-----  ---------  ---------  --------
+
+   57        635         91       169
+   58        641         89       400
+   40        516         17      1001
+   41        519         43       472
+   59        649         37       770
+   47        580         20       404
+   60        653        123       574
+   63        670         24       992
+   64        674         49       761
+
+
+The contents of the I/O WAIT QUEUE
+----------------------------------
+
+The I/O Wait Queue is empty.
+
+
+The contents of SEMAPHORE ZERO
+------------------------------
+
+The value of semaphore 0 is 1.
+
+The wait queue for semaphore 0 is empty.
+
+
+The contents of SEMAPHORE ONE
+-----------------------------
+
+The value of semaphore 1 is 1.
+
+The wait queue for semaphore 1 is empty.
+
+
+The contents of SEMAPHORE TWO
+-----------------------------
+
+The value of semaphore 2 is 1.
+
+The wait queue for semaphore 2 is empty.
+
+
+The contents of SEMAPHORE THREE
+-------------------------------
+
+The value of semaphore 3 is 1.
+
+The wait queue for semaphore 3 is empty.
+
+
+The contents of SEMAPHORE FOUR
+------------------------------
+
+The value of semaphore 4 is 1.
+
+The wait queue for semaphore 4 is empty.
+
+
+The CPU  Start Time  CPU burst time left
+-------  ----------  -------------------
+
+     56        7108                    1
+
+
+The contents of the FINISHED LIST
+---------------------------------
+
+Job #  Arr. Time  Mem. Req.  Run Time  Start Time  Com. Time
+-----  ---------  ---------  --------  ----------  ---------
+
+    1        100         20        78         100        178
+    2        120         60        90         178        268
+    3        122          1         1         268        269
+    4        130        100       100         269        369
+    6        136        512        99         369        468
+    7        145        200         2         468        470
+    8        150         20        98         470        568
+   10        161        499        40         568        608
+   11        170        401        79         608        687
+   12        181         11        90         687        777
+   13        188          9        66         777        843
+   14        190          5        20         843        863
+   15        195          1        70         863        933
+   16        201         69        23         933        956
+   17        260         25       100         956       1056
+   19        271        232        90        1056       1146
+   20        278        102        47        1146       1193
+   21        300        123        43        1193       1236
+   22        306          1         1        1236       1237
+   23        309        100        99        1237       1336
+   24        313        179        23        1336       1359
+   25        351        342        59        1359       1418
+   26        401         58       101        1418       1719
+   27        404        125       200        1518       2019
+   28        410          3       330        1618       2349
+   30        423         20       124        1819       2673
+   31        450         70       230        2019       2803
+   29        417        340       999        1719       3402
+   32        467        184       700        3402       4102
+   33        470        500       701        4102       4803
+   35        480        432       150        4903       5453
+   36        499         37       203        5003       6756
+   51        602         56        88        6756       6844
+   34        474         19       401        4803       6845
+   52        611        105        72        6845       6917
+   53        616         89        99        6917       7016
+   54        621         21        34        7016       7050
+   55        627         43        58        7050       7108
+   37        508         89       204        5453       7312
+   39        511         14       198        5553       7510
+   42        524         39       399        5853       8509
+   43        537         78       233        5953       8742
+   44        545          6       101        6053       8743
+   45        566          9       256        6153       8899
+   46        574          1       199        6253       8998
+   49        586         30       341        6453       9539
+   61        660         10        34        9639       9673
+   50        590         61       192        6553       9765
+   62        664         23        36        9765       9801
+
+
+There are 3 blocks of main memory available in the system.
+
+Event: T   Time: 10008
+Event: T   Time: 10077
+Event: T   Time: 10377
+Event: E   Time: 10677
+Event: T   Time: 10749
+Event: E   Time: 11049
+Event: T   Time: 11053
+Event: E   Time: 11353
+Event: E   Time: 11653
+Event: E   Time: 11953
+Event: E   Time: 12253
+Event: E   Time: 12553
+Event: T   Time: 12727
+Event: E   Time: 13027
+Event: E   Time: 13327
+Event: T   Time: 13328
+Event: T   Time: 13398
+Event: T   Time: 13690
+Event: T   Time: 13751
+Event: T   Time: 13790
+Event: T   Time: 13800
+Event: E   Time: 13900
+Event: E   Time: 14200
+Event: T   Time: 14252
+Event: E   Time: 14352
+Event: E   Time: 14652
+Event: T   Time: 14765
+Event: T   Time: 14839
+Event: E   Time: 14939
+Event: T   Time: 15068
+Event: T   Time: 15112
+Event: E   Time: 15212
+Event: E   Time: 15512
+Event: E   Time: 15812
+Event: E   Time: 16112
+Event: T   Time: 16113
+Event: T   Time: 16205
+Event: T   Time: 16267
+Event: E   Time: 16367
+Event: T   Time: 16410
+Event: E   Time: 16510
+Event: T   Time: 16543
+Event: T   Time: 16545
+Event: T   Time: 16614
+Event: T   Time: 16713
+Event: T   Time: 16747
+Event: E   Time: 16847
+Event: E   Time: 16947
+Event: E   Time: 17247
+Event: T   Time: 17451
+Event: E   Time: 17751
+Event: T   Time: 17885
+Event: E   Time: 18185
+Event: E   Time: 18485
+Event: E   Time: 18785
+Event: T   Time: 18918
+Event: E   Time: 19018
+Event: T   Time: 19072
+Event: T   Time: 19129
+Event: E   Time: 19229
+Event: T   Time: 19232
+Event: T   Time: 19264
+Event: T   Time: 19276
+Event: T   Time: 19295
+Event: E   Time: 19595
+Event: T   Time: 19625
+Event: E   Time: 19725
+Event: E   Time: 19825
+Event: T   Time: 19826
+Event: T   Time: 19847
+Event: T   Time: 19860
+Event: T   Time: 19861
+Event: E   Time: 20161
+Event: E   Time: 20461
+Event: T   Time: 20462
+Event: E   Time: 20762
+Event: T   Time: 20854
+Event: E   Time: 21154
+Event: E   Time: 21454
+Event: T   Time: 21477
+Event: D   Time: 22000
+
+************************************************************
+
+The status of the simulator at time 22000.
+
+The contents of the JOB SCHEDULING QUEUE
+----------------------------------------
+
+The Job Scheduling Queue is empty.
+
+
+The contents of the FIRST LEVEL READY QUEUE
+-------------------------------------------
+
+The First Level Ready Queue is empty.
+
+
+The contents of the SECOND LEVEL READY QUEUE
+--------------------------------------------
+
+The Second Level Ready Queue is empty.
+
+
+The contents of the I/O WAIT QUEUE
+----------------------------------
+
+The I/O Wait Queue is empty.
+
+
+The contents of SEMAPHORE ZERO
+------------------------------
+
+The value of semaphore 0 is 1.
+
+The wait queue for semaphore 0 is empty.
+
+
+The contents of SEMAPHORE ONE
+-----------------------------
+
+The value of semaphore 1 is 1.
+
+The wait queue for semaphore 1 is empty.
+
+
+The contents of SEMAPHORE TWO
+-----------------------------
+
+The value of semaphore 2 is 1.
+
+The wait queue for semaphore 2 is empty.
+
+
+The contents of SEMAPHORE THREE
+-------------------------------
+
+The value of semaphore 3 is 1.
+
+The wait queue for semaphore 3 is empty.
+
+
+The contents of SEMAPHORE FOUR
+------------------------------
+
+The value of semaphore 4 is 1.
+
+The wait queue for semaphore 4 is empty.
+
+
+The CPU  Start Time  CPU burst time left
+-------  ----------  -------------------
+
+The CPU is idle.
+
+
+The contents of the FINISHED LIST
+---------------------------------
+
+Job #  Arr. Time  Mem. Req.  Run Time  Start Time  Com. Time
+-----  ---------  ---------  --------  ----------  ---------
+
+    1        100         20        78         100        178
+    2        120         60        90         178        268
+    3        122          1         1         268        269
+    4        130        100       100         269        369
+    6        136        512        99         369        468
+    7        145        200         2         468        470
+    8        150         20        98         470        568
+   10        161        499        40         568        608
+   11        170        401        79         608        687
+   12        181         11        90         687        777
+   13        188          9        66         777        843
+   14        190          5        20         843        863
+   15        195          1        70         863        933
+   16        201         69        23         933        956
+   17        260         25       100         956       1056
+   19        271        232        90        1056       1146
+   20        278        102        47        1146       1193
+   21        300        123        43        1193       1236
+   22        306          1         1        1236       1237
+   23        309        100        99        1237       1336
+   24        313        179        23        1336       1359
+   25        351        342        59        1359       1418
+   26        401         58       101        1418       1719
+   27        404        125       200        1518       2019
+   28        410          3       330        1618       2349
+   30        423         20       124        1819       2673
+   31        450         70       230        2019       2803
+   29        417        340       999        1719       3402
+   32        467        184       700        3402       4102
+   33        470        500       701        4102       4803
+   35        480        432       150        4903       5453
+   36        499         37       203        5003       6756
+   51        602         56        88        6756       6844
+   34        474         19       401        4803       6845
+   52        611        105        72        6845       6917
+   53        616         89        99        6917       7016
+   54        621         21        34        7016       7050
+   55        627         43        58        7050       7108
+   37        508         89       204        5453       7312
+   39        511         14       198        5553       7510
+   42        524         39       399        5853       8509
+   43        537         78       233        5953       8742
+   44        545          6       101        6053       8743
+   45        566          9       256        6153       8899
+   46        574          1       199        6253       8998
+   49        586         30       341        6453       9539
+   61        660         10        34        9639       9673
+   50        590         61       192        6553       9765
+   62        664         23        36        9765       9801
+   56        632         16       107        7108      10008
+   57        635         91       169        7312      10077
+   58        641         89       400        7510      10377
+   41        519         43       472        5753      10749
+   47        580         20       404        6353      11053
+   60        653        123       574        9539      12727
+   40        516         17      1001        5653      13328
+   59        649         37       770        8509      13398
+   63        670         24       992        9801      13690
+   64        674         49       761        9901      13751
+   65        678        501        39       13751      13790
+   66        681        398        10       13790      13800
+   67        690        302       452       13800      14252
+   68        694        511       513       14252      14765
+   71        734         30        74       14765      14839
+   72        743         51       229       14839      15068
+   73        746        499        44       15068      15112
+   74        752        509      1001       15112      16113
+   75        773         34        92       16113      16205
+   76        881         34        62       16205      16267
+   78        891         23        43       16367      16410
+   80        934         11        33       16510      16543
+   81        939          3         2       16543      16545
+   83        969         12        69       16545      16614
+   84        972         44        99       16614      16713
+   85        999         95        34       16713      16747
+   79        914         41       304       16410      17451
+   87       1031         83       234       16847      17885
+   86       1004        168       833       16747      18918
+   90       1036         12        54       19018      19072
+   91       1039         10        57       19072      19129
+   93       1048          2         3       19229      19232
+   94       1054          2        32       19232      19264
+   95       7072         32        12       19264      19276
+   96       7179         20        19       19276      19295
+   89       1034        423       130       18918      19625
+   99       7463         10         1       19825      19826
+  101       7500         40        21       19826      19847
+  102       7635         12        13       19847      19860
+   92       1045          4       101       19129      19861
+   98       7423         22       101       19725      20462
+   97       7400         54       492       19625      20854
+   77        886         33      2523       16267      21477
+
+
+There are 512 blocks of main memory available in the system.
+
+Event: A   Time: 22001
+Event: T   Time: 22002
+
+The contents of the FINAL FINISHED LIST
+---------------------------------------
+
+Job #  Arr. Time  Mem. Req.  Run Time  Start Time  Com. Time
+-----  ---------  ---------  --------  ----------  ---------
+
+    1        100         20        78         100        178
+    2        120         60        90         178        268
+    3        122          1         1         268        269
+    4        130        100       100         269        369
+    6        136        512        99         369        468
+    7        145        200         2         468        470
+    8        150         20        98         470        568
+   10        161        499        40         568        608
+   11        170        401        79         608        687
+   12        181         11        90         687        777
+   13        188          9        66         777        843
+   14        190          5        20         843        863
+   15        195          1        70         863        933
+   16        201         69        23         933        956
+   17        260         25       100         956       1056
+   19        271        232        90        1056       1146
+   20        278        102        47        1146       1193
+   21        300        123        43        1193       1236
+   22        306          1         1        1236       1237
+   23        309        100        99        1237       1336
+   24        313        179        23        1336       1359
+   25        351        342        59        1359       1418
+   26        401         58       101        1418       1719
+   27        404        125       200        1518       2019
+   28        410          3       330        1618       2349
+   30        423         20       124        1819       2673
+   31        450         70       230        2019       2803
+   29        417        340       999        1719       3402
+   32        467        184       700        3402       4102
+   33        470        500       701        4102       4803
+   35        480        432       150        4903       5453
+   36        499         37       203        5003       6756
+   51        602         56        88        6756       6844
+   34        474         19       401        4803       6845
+   52        611        105        72        6845       6917
+   53        616         89        99        6917       7016
+   54        621         21        34        7016       7050
+   55        627         43        58        7050       7108
+   37        508         89       204        5453       7312
+   39        511         14       198        5553       7510
+   42        524         39       399        5853       8509
+   43        537         78       233        5953       8742
+   44        545          6       101        6053       8743
+   45        566          9       256        6153       8899
+   46        574          1       199        6253       8998
+   49        586         30       341        6453       9539
+   61        660         10        34        9639       9673
+   50        590         61       192        6553       9765
+   62        664         23        36        9765       9801
+   56        632         16       107        7108      10008
+   57        635         91       169        7312      10077
+   58        641         89       400        7510      10377
+   41        519         43       472        5753      10749
+   47        580         20       404        6353      11053
+   60        653        123       574        9539      12727
+   40        516         17      1001        5653      13328
+   59        649         37       770        8509      13398
+   63        670         24       992        9801      13690
+   64        674         49       761        9901      13751
+   65        678        501        39       13751      13790
+   66        681        398        10       13790      13800
+   67        690        302       452       13800      14252
+   68        694        511       513       14252      14765
+   71        734         30        74       14765      14839
+   72        743         51       229       14839      15068
+   73        746        499        44       15068      15112
+   74        752        509      1001       15112      16113
+   75        773         34        92       16113      16205
+   76        881         34        62       16205      16267
+   78        891         23        43       16367      16410
+   80        934         11        33       16510      16543
+   81        939          3         2       16543      16545
+   83        969         12        69       16545      16614
+   84        972         44        99       16614      16713
+   85        999         95        34       16713      16747
+   79        914         41       304       16410      17451
+   87       1031         83       234       16847      17885
+   86       1004        168       833       16747      18918
+   90       1036         12        54       19018      19072
+   91       1039         10        57       19072      19129
+   93       1048          2         3       19229      19232
+   94       1054          2        32       19232      19264
+   95       7072         32        12       19264      19276
+   96       7179         20        19       19276      19295
+   89       1034        423       130       18918      19625
+   99       7463         10         1       19825      19826
+  101       7500         40        21       19826      19847
+  102       7635         12        13       19847      19860
+   92       1045          4       101       19129      19861
+   98       7423         22       101       19725      20462
+   97       7400         54       492       19625      20854
+   77        886         33      2523       16267      21477
+  103      22001          1         1       22001      22002
+
+
+The Average Turnaround Time for the simulation was 8538.086 units.
+
+The Average Job Scheduling Wait Time for the simulation was 7344.376 units.
+
+There are 512 blocks of main memory available in the system.
+

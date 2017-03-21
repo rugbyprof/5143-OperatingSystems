@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>Process.py</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>Process.py</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">components.MyFuncs</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">components.Accounting</span> <span class="kn">import</span> <span class="o">*</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      <h3><span id="class:-process" href="class:-process"> Class: Process</span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      <p>Represents a single process.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">class</span> <span class="nc">Process</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      <ul>
+<li>
+<p>Classes:</p>
+<p>Pcb              : Process Control Block Included in process class
+SystemAccounting : Accounting class </p>
+</li>
+<li>
+<p>Methods:</p>
+<p><strong>str</strong>    : Prints a string representation of the object
+<strong>setitem</strong>: Allows user to use [] to set a value within the object.
+             (e.g. p1['priority'] = 2)
+<strong>getitem</strong>: Allows user to use [] to get a value from an object.</p>
+</li>
+<li>
+<p><strong>Attributes</strong>:</p>
+<ul>
+<li>burst_time      (int)   : CPU Burst time</li>
+<li>io_status_info  (list)  : This includes a list of I/O devices allocated to the process.</li>
+<li>mem_required    (int)   : Total memory required (in blocks)</li>
+<li>priority        (int)   : Priority of process</li>
+<li>process_id      (int)   : Unique identification for each of the process in the operating system.</li>
+<li>state           (enum)  : The current state of the process [New, Ready, Running, Waiting, Terminated]</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      <p>Params: (dict)
+    kwargs should contain everyting it the attributes list above.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      <p>Either pid or process_id need be present in kwargs otherwise, error</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">if</span> <span class="s1">&#39;process_id&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span> <span class="ow">and</span> <span class="s1">&#39;pid&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Need a process id to initialize a process!&quot;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      <p>if pid is the arg, then set process_id (preferred arg)</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">if</span> <span class="s1">&#39;pid&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;process_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;pid&#39;</span><span class="p">]</span>
+
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;New&#39;</span>                                  <span class="c1"># All new processes are in the &#39;New&#39; state</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">io_status_info</span> <span class="o">=</span> <span class="p">[]</span>                            <span class="c1"># No IO devices are allocated</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">acct</span> <span class="o">=</span> <span class="n">SystemAccounting</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;process_id&#39;</span><span class="p">])</span>  <span class="c1"># Instance of an Accounting Block</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mem_required</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">burst_time</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">priority</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">process_id</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">if</span> <span class="s1">&#39;priority&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>                    
+            <span class="bp">self</span><span class="o">.</span><span class="n">priority</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;priority&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s1">&#39;mem_required&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mem_required</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;mem_required&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s1">&#39;burst_time&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">burst_time</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;burst_time&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s1">&#39;num_bursts&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">num_bursts</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;num_bursts&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s1">&#39;priority&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">priority</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;priority&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s1">&#39;process_id&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">process_id</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;process_id&#39;</span><span class="p">]</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-8'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-8'>#</a>
+      </div>
+      <p>"setitem" allows the '[]' brackets to be used to set a data member. I used this as a
+shortcut to access the many data members used by this class, especially since it is
+composed of a 'Pcb' and 'Accounting' class.   </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-9'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-9'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">acct</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">acct</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-10'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-10'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">acct</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">acct</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">None</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-11'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-11'>#</a>
+      </div>
+      <p>Visual dump of class state.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-12'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-12'>#</a>
+      </div>
+      <p>return MyStr(self)</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">return</span> <span class="s2">&quot;[pid: </span><span class="si">%s</span><span class="s2">, state: </span><span class="si">%s</span><span class="s2">, io: </span><span class="si">%s</span><span class="s2">, mem: </span><span class="si">%s</span><span class="s2">, burst: </span><span class="si">%s</span><span class="s2">, pri: </span><span class="si">%s</span><span class="s2">]&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">process_id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">io_status_info</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mem_required</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">burst_time</span><span class="p">,</span>  <span class="bp">self</span><span class="o">.</span><span class="n">priority</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-13'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-13'>#</a>
+      </div>
+      <p>Read in a bunch of process data from our test file</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">test</span> <span class="o">=</span> <span class="n">ProcessLoader</span><span class="p">(</span><span class="s1">&#39;/Volumes/1TBHDD/griffin/Dropbox/Cpu_Scheduling/cpu_sim_input.txt&#39;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-14'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-14'>#</a>
+      </div>
+      <p>ProcessLoader returns a FCFS queue</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">process_queue</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">get_jobs_queue</span><span class="p">()</span>
+
+    <span class="n">processes</span> <span class="o">=</span> <span class="p">[]</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-15'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-15'>#</a>
+      </div>
+      <p>Create a list of actual processes with each of the data dictionaries</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">process_queue</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">process_queue</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-16'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-16'>#</a>
+      </div>
+      <p>The **d turns the dictionary into a list of keyword arguments
+{'event': 'A', 'time': '100', 'runTime': '78', 'pid': '1', 'memory': '20'}
+turns into:
+event='A', time='100', runTime='78', pid=1, memory='20' </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="n">processes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Process</span><span class="p">(</span><span class="o">**</span><span class="n">d</span><span class="p">))</span>
+    
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Running Process class test.....</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">processes</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">])</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;==================================</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>

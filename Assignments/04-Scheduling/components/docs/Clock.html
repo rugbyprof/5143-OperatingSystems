@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>Clock.py</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>Clock.py</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">components.MyFuncs</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">import</span> <span class="nn">random</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      <h3><span id="class:-clock" href="class:-clock"> Class: Clock</span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      <p>Simulated system clock.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">class</span> <span class="nc">Clock</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      <p>A singleton clock class so that any and all instances (objects) declared within the scope of 
+this file will all reference the same instance (hence all have the same values).</p>
+<ul>
+<li><strong>Attributes</strong>:<ul>
+<li>clock (int)      : Current value of clock</li>
+<li>total_ticks (int): Total number of ticks the clock as accumulated (time run)</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">__shared_state</span> <span class="o">=</span> <span class="p">{}</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      <p>Clock constructor</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start_time</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      <ul>
+<li>
+<p><strong>Args:</strong></p>
+<ul>
+<li>start_time (int): Initial value of the clock</li>
+</ul>
+</li>
+<li>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__shared_state</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__shared_state</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">clock</span> <span class="o">=</span> <span class="n">start_time</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">total_ticks</span> <span class="o">=</span> <span class="mi">0</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      <p>Calls thread safe overloaded method</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      <ul>
+<li><strong>Args:</strong><ul>
+<li>val (int): Value to add to the clock.</li>
+</ul>
+</li>
+<li><strong>Returns:</strong><ul>
+<li>None</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__iadd__</span><span class="p">(</span><span class="n">val</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-8'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-8'>#</a>
+      </div>
+      <p>Returns the current value of the clock.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">current_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-9'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-9'>#</a>
+      </div>
+      <ul>
+<li><strong>Args:</strong><ul>
+<li>None</li>
+</ul>
+</li>
+<li><strong>Returns:</strong><ul>
+<li>(int): The current value of the clock.</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">clock</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-10'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-10'>#</a>
+      </div>
+      <p>Reset clock to some given value.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">hard_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-11'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-11'>#</a>
+      </div>
+      <p>Since this is a singleton object in a simulation evironment, I created 
+a method to "reset" or re-initialize the clock.</p>
+<ul>
+<li><strong>Args:</strong><ul>
+<li>start (int): Value to reset clock to.</li>
+</ul>
+</li>
+<li><strong>Returns:</strong><ul>
+<li>None</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="bp">self</span><span class="o">.</span><span class="n">clock</span> <span class="o">=</span> <span class="n">start</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">total_ticks</span> <span class="o">=</span> <span class="mi">0</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-12'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-12'>#</a>
+      </div>
+      <p>Overloaded add method</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__iadd__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-13'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-13'>#</a>
+      </div>
+      <ul>
+<li>
+<p>This overloaded method allows something similar to:</p>
+<ul>
+<li>c1 = Clock()</li>
+<li>c1 += 1         # Will add 1 to the clock value </li>
+</ul>
+</li>
+<li>
+<p><strong>Args:</strong></p>
+<ul>
+<li>val (int): Value to add to the clock.</li>
+</ul>
+</li>
+<li><strong>Returns:</strong><ul>
+<li>None</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="bp">self</span><span class="o">.</span><span class="n">lock</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clock</span> <span class="o">+=</span> <span class="n">val</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">total_ticks</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lock</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-14'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-14'>#</a>
+      </div>
+      <p>Visual dump of class state.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-15'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-15'>#</a>
+      </div>
+      <ul>
+<li><strong>Args:</strong><ul>
+<li>None</li>
+</ul>
+</li>
+<li><strong>Returns:</strong><ul>
+<li>None</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">return</span> <span class="n">MyStr</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-16'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-16'>#</a>
+      </div>
+      <h3><span id="clock-test-code" href="clock-test-code"> Clock Test Code </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Running Clock class test.....</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Creating 3 clocks with different start times...&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;This will show that the clock class is a singleton and all instances refer to same single instance&quot;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-17'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-17'>#</a>
+      </div>
+      <ul>
+<li>init clock to 0 ticks (this clock is the clock each other instance will refer to.</li>
+<li>init clock to 2000 ticks</li>
+<li>init clock to 5000 ticks</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">clocks</span> <span class="o">=</span> <span class="p">[</span><span class="n">Clock</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="n">Clock</span><span class="p">(</span><span class="mi">2000</span><span class="p">),</span><span class="n">Clock</span><span class="p">(</span><span class="mi">5000</span><span class="p">)]</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Random ticks between 50 and 100...&quot;</span><span class="p">)</span>
+    <span class="n">random_ticks</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Running </span><span class="si">%d</span><span class="s2"> clock ticks:&quot;</span> <span class="o">%</span> <span class="n">random_ticks</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">random_ticks</span><span class="p">):</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">clocks</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;adding to clock </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">index</span><span class="p">)</span>
+        <span class="n">clocks</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Clock 1:&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">clocks</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Clock 2:&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">clocks</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Clock 3:&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">clocks</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>

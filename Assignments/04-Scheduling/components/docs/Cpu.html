@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>Cpu.py</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>Cpu.py</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">components.MyFuncs</span> <span class="kn">import</span> <span class="o">*</span> 
+<span class="kn">from</span> <span class="nn">components.Clock</span> <span class="kn">import</span> <span class="n">Clock</span>
+<span class="kn">from</span> <span class="nn">components.Process</span> <span class="kn">import</span> <span class="n">Process</span>
+<span class="kn">import</span> <span class="nn">random</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      <h3><span id="class:-cpu" href="class:-cpu"> Class: Cpu</span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      <p>This class represents a single cpu that runs a single process.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">class</span> <span class="nc">Cpu</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      <ul>
+<li><strong>Methods</strong>:<ul>
+<li>run_process     : places a process on the cpu</li>
+<li>remove_process  : removes a process from the cpu</li>
+<li>busy            : checks if cpu is busy</li>
+</ul>
+</li>
+<li><strong>Attributes</strong>:<ul>
+<li>running_process (Process)    : Process placed on cpu</li>
+<li>system_clock (Clock)         : Copy of system clock</li>
+<li>process_start_time (int)     : When process started </li>
+<li>process_run_time (int)       : Time (in ticks) process ran </li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">process</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__type_check</span><span class="p">(</span><span class="n">process</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">running_process</span> <span class="o">=</span> <span class="n">process</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">system_clock</span> <span class="o">=</span> <span class="n">Clock</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">process_start_time</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">process_run_time</span> <span class="o">=</span> <span class="mi">0</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      <p>Loads a process onto the Cpu.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">run_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">process</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      <ul>
+<li><strong>Args:</strong><ul>
+<li>process (Process): The process instance to put on cpu</li>
+</ul>
+</li>
+<li><strong>Returns:</strong><ul>
+<li>True on success, False on failure</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="bp">self</span><span class="o">.</span><span class="n">__type_check</span><span class="p">(</span><span class="n">process</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">running_process</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">running_process</span> <span class="o">=</span> <span class="n">process</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">process_start_time</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">system_clock</span><span class="o">.</span><span class="n">current_time</span><span class="p">()</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Process already runnin on CPU, remove running process first.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">False</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      <p>Removes a process from the Cpu.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">remove_process</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      <ul>
+<li><strong>Args:</strong><ul>
+<li>process (Process): The process instance to put on cpu</li>
+</ul>
+</li>
+<li><strong>Returns:</strong><ul>
+<li>False on failure, Dict on success {"pid":process id,"run_time":amount of time process ran}</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">running_process</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+        <span class="n">process</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">running_process</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">process_run_time</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">system_clock</span><span class="o">.</span><span class="n">current_time</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_start_time</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">running_process</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;pid&quot;</span><span class="p">:</span><span class="n">process</span><span class="p">,</span> <span class="s2">&quot;run_time&quot;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">process_run_time</span><span class="p">}</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-8'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-8'>#</a>
+      </div>
+      <p>Boolean test if cpu is busy.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">busy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-9'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-9'>#</a>
+      </div>
+      <ul>
+<li><strong>Args:</strong><ul>
+<li>process (Process): The process instance to put on cpu</li>
+</ul>
+</li>
+<li><strong>Returns:</strong><ul>
+<li>bool : True = job on cpu / False = No job</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">running_process</span> <span class="ow">is</span> <span class="bp">None</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-10'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-10'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">__type_check</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">process</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">process</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">process</span><span class="p">,</span> <span class="n">Process</span><span class="p">):</span>
+            <span class="k">raise</span><span class="p">(</span><span class="s2">&quot;CPU Error: Attempted to place a non-process on cpu&quot;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-11'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-11'>#</a>
+      </div>
+      <p>Visual dump of class state.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-12'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-12'>#</a>
+      </div>
+      <ul>
+<li><strong>Args:</strong><ul>
+<li>None</li>
+</ul>
+</li>
+<li><strong>Returns:</strong><ul>
+<li>None</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">return</span> <span class="n">MyStr</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-13'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-13'>#</a>
+      </div>
+      <p>Read in a bunch of process data from our test file</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">test</span> <span class="o">=</span> <span class="n">ProcessLoader</span><span class="p">(</span><span class="s1">&#39;/Volumes/1TBHDD/griffin/Dropbox/Cpu_Scheduling/cpu_sim_input.txt&#39;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-14'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-14'>#</a>
+      </div>
+      <p>ProcessLoader returns a FCFS queue</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">process_queue</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">get_jobs_queue</span><span class="p">()</span>
+    <span class="n">processes</span> <span class="o">=</span> <span class="p">[]</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-15'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-15'>#</a>
+      </div>
+      <p>Create a list of actual processes with each of the data dictionaries</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">process_queue</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">process_queue</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-16'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-16'>#</a>
+      </div>
+      <p>The **d turns the dictionary into a list of keyword arguments
+{'event': 'A', 'time': '100', 'runTime': '78', 'pid': '1', 'memory': '20'}
+turns into:
+event='A', time='100', runTime='78', pid=1, memory='20' </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="n">processes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Process</span><span class="p">(</span><span class="o">**</span><span class="n">d</span><span class="p">))</span>
+    
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Running Cpu class test.....</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">myclock</span> <span class="o">=</span> <span class="n">Clock</span><span class="p">()</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-17'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-17'>#</a>
+      </div>
+      <p>Init clock to 100 ticks</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">myclock</span><span class="o">+=</span> <span class="mi">100</span>
+
+    <span class="n">single_cpu</span> <span class="o">=</span> <span class="n">Cpu</span><span class="p">()</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Placing process on single_cpu&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">single_cpu</span><span class="o">.</span><span class="n">run_process</span><span class="p">(</span><span class="n">processes</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Placing another process on single_cpu (should fail) =&gt;&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">single_cpu</span><span class="o">.</span><span class="n">run_process</span><span class="p">(</span><span class="n">processes</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Error: process already running on cpu&quot;</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Test to see if cpu is busy, before loading a process=&gt;&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">single_cpu</span><span class="o">.</span><span class="n">busy</span><span class="p">():</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+            <span class="n">single_cpu</span><span class="o">.</span><span class="n">run_process</span><span class="p">(</span><span class="n">processes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">process already running on cpu&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">cpu busy, cannot run process&quot;</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Adding some random time to clock, so process run time wont be init value of clock&quot;</span><span class="p">)</span>
+    <span class="n">myclock</span> <span class="o">+=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Removing process from single_cpu=&gt;&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">single_cpu</span><span class="o">.</span><span class="n">remove_process</span><span class="p">())</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Adding different process to single_cpu&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">single_cpu</span><span class="o">.</span><span class="n">run_process</span><span class="p">(</span><span class="n">processes</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Adding some random time to clock, so process run time wont be init value of clock&quot;</span><span class="p">)</span>
+    <span class="n">myclock</span> <span class="o">+=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Removing process from single_cpu&quot;</span><span class="p">)</span>
+    <span class="n">p2</span> <span class="o">=</span> <span class="n">single_cpu</span><span class="o">.</span><span class="n">remove_process</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Attempting to run a NON process on a cpu=&gt;&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">single_cpu</span><span class="o">.</span><span class="n">run_process</span><span class="p">(</span><span class="s2">&quot;not a process&quot;</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Error: Not a process, cannot be run.&quot;</span><span class="p">)</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>

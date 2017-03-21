@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>Memory.py</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>Memory.py</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">components.MyFuncs</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">components.Process</span> <span class="kn">import</span> <span class="n">Process</span>
+<span class="kn">import</span> <span class="nn">time</span> 
+<span class="kn">import</span> <span class="nn">sys</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      <h3><span id="class:-memory" href="class:-memory"> Class: Memory</span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      <p>A singleton object that Manages the simulated memory.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">class</span> <span class="nc">Memory</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      <ul>
+<li><strong>Methods</strong>:<ul>
+<li>allocate(pid) -&gt; dict : Attempt to allocate memory for a process</li>
+<li>deallocate(pid) -&gt; dict : Remove process from memory if process exists</li>
+<li>available(blks) -&gt; bool : Is memory available &gt;= "blks" size</li>
+<li>__calc_available(process) -&gt; None : Total up allocated memory</li>
+</ul>
+</li>
+<li><strong>Attributes</strong>: <ul>
+<li>mem_size   : Total memory size in "blocks"</li>
+<li>blks_avail : Blocks currently available</li>
+<li>blks_used  : Blocks allocated to processes</li>
+<li>pid_list   : List of process in memory</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">__shared_state</span> <span class="o">=</span> <span class="p">{}</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">512</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__shared_state</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__shared_state</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mem_size</span> <span class="o">=</span> <span class="n">size</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">blks_avail</span> <span class="o">=</span> <span class="n">size</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">blks_used</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">process_table</span> <span class="o">=</span> <span class="p">{}</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      <p>Allocate chunk of memory.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">allocate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">process</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      <ul>
+<li><strong>Args:</strong></li>
+<li>process (Process): process being allocated memory.</li>
+<li><strong>Returns:</strong></li>
+<li>dict: {'success':True}</li>
+<li>dict: {'success':False, 'error':"Not enough memory available"}</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fits</span><span class="p">(</span><span class="n">process</span><span class="p">[</span><span class="s1">&#39;mem_required&#39;</span><span class="p">]):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">process_table</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">process</span><span class="p">[</span><span class="s1">&#39;process_id&#39;</span><span class="p">])]</span> <span class="o">=</span> <span class="n">process</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__calc_available</span><span class="p">()</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;success&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;success&#39;</span><span class="p">:</span><span class="bp">False</span><span class="p">,</span> <span class="s1">&#39;error&#39;</span><span class="p">:</span><span class="s2">&quot;Not enough memory available&quot;</span><span class="p">,</span>
+                    <span class="s1">&#39;requested&#39;</span><span class="p">:</span><span class="n">process</span><span class="o">.</span><span class="n">mem_required</span><span class="p">,</span> <span class="s1">&#39;available&#39;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">blks_avail</span><span class="p">}</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      <p>Deallocate chunk of memory.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">deallocate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pid</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-8'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-8'>#</a>
+      </div>
+      <ul>
+<li><strong>Args:</strong></li>
+<li>process (Process): The process to be removed from memory.</li>
+<li><strong>Returns:</strong></li>
+<li>(dict): {'success':True}</li>
+<li>(dict): {'success':False, 'error':"Process id did not exist"}</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_table</span><span class="p">:</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_table</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">pid</span><span class="p">)]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__calc_available</span><span class="p">()</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;success&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;success&#39;</span><span class="p">:</span><span class="bp">False</span><span class="p">,</span> <span class="s1">&#39;error&#39;</span><span class="p">:</span><span class="s2">&quot;Process id did not exist&quot;</span><span class="p">}</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-9'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-9'>#</a>
+      </div>
+      <p>Check to see how mucn memory is available.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">fits</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">blks</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-10'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-10'>#</a>
+      </div>
+      <ul>
+<li><strong>Args:</strong></li>
+<li>blks (int): Blocks needed to allocate.</li>
+<li><strong>Returns:</strong></li>
+<li>(bool): The return value. True for success, False otherwise.</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">if</span> <span class="n">blks</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Block size needed missing as a parameter.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">blks_avail</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="nb">int</span><span class="p">(</span><span class="n">blks</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-11'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-11'>#</a>
+      </div>
+      <p>Check to see how mucn memory is available.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">available</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-12'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-12'>#</a>
+      </div>
+      <ul>
+<li><strong>Args:</strong></li>
+<li>None</li>
+<li><strong>Returns:</strong></li>
+<li>(int): The total available blocks remaining.</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">blks_avail</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-13'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-13'>#</a>
+      </div>
+      <p>Calculate available memory, if any.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">__calc_available</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-14'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-14'>#</a>
+      </div>
+      <p>This private method sums all allocated memory using processes in the process table
+and calculates the "blks_available".</p>
+<ul>
+<li><strong>Args:</strong></li>
+<li>None</li>
+<li><strong>Returns:</strong></li>
+<li>None</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="bp">self</span><span class="o">.</span><span class="n">blks_used</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">pid</span><span class="p">,</span> <span class="n">pvals</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_table</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">blks_used</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">pvals</span><span class="o">.</span><span class="n">mem_required</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">blks_avail</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mem_size</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">blks_used</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-15'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-15'>#</a>
+      </div>
+      <p>Checks to see if two mem instances are same.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">rhs</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-16'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-16'>#</a>
+      </div>
+      <p>Used for testing to see if memory instances are actually equal.</p>
+<ul>
+<li>Usage: <ul>
+<li>mem1 = Memory(1024)</li>
+<li>mem2 = Memory(2048)</li>
+<li>print(mem1 == mem2)  </li>
+<li>prints True because mem2 doesn't actually create a new instance it simply creates a different reference to mem1</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mem_size</span> <span class="o">==</span> <span class="n">rhs</span><span class="o">.</span><span class="n">mem_size</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">blks_avail</span> <span class="o">==</span> <span class="n">rhs</span><span class="o">.</span><span class="n">blks_avail</span> <span class="ow">and</span> \
+               <span class="bp">self</span><span class="o">.</span><span class="n">blks_used</span> <span class="o">==</span> <span class="n">rhs</span><span class="o">.</span><span class="n">blks_used</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">process_table</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">rhs</span><span class="o">.</span><span class="n">process_table</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-17'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-17'>#</a>
+      </div>
+      <p>Visual dump of class state.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-18'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-18'>#</a>
+      </div>
+      <ul>
+<li><strong>Args:</strong><ul>
+<li>None</li>
+</ul>
+</li>
+<li><strong>Returns:</strong><ul>
+<li>None</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">return</span> <span class="n">MyStr</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    
+
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">mem_size</span> <span class="o">=</span> <span class="mi">512</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-19'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-19'>#</a>
+      </div>
+      <p>Read in a bunch of process data from our test file</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">test</span> <span class="o">=</span> <span class="n">ProcessLoader</span><span class="p">(</span><span class="s1">&#39;/Volumes/1TBHDD/griffin/Dropbox/Cpu_Scheduling/cpu_sim_input.txt&#39;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-20'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-20'>#</a>
+      </div>
+      <p>ProcessLoader returns a FCFS queue</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">process_queue</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">get_jobs_queue</span><span class="p">()</span>
+
+    <span class="n">processes</span> <span class="o">=</span> <span class="p">[]</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-21'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-21'>#</a>
+      </div>
+      <p>Create a list of actual processes with each of the data dictionaries</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">process_queue</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">process_queue</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-22'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-22'>#</a>
+      </div>
+      <p>The **d turns the dictionary into a list of keyword arguments
+{'event': 'A', 'time': '100', 'runTime': '78', 'pid': '1', 'memory': '20'}
+turns into:
+event='A', time='100', runTime='78', pid=1, memory='20' </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="n">processes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Process</span><span class="p">(</span><span class="o">**</span><span class="n">d</span><span class="p">))</span>
+    
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;############################################################&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Running Memory class test.....</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Allocating memory of size: </span><span class="si">%d</span><span class="s2"> ....&quot;</span> <span class="o">%</span> <span class="nb">int</span><span class="p">(</span><span class="n">mem_size</span><span class="p">))</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-23'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-23'>#</a>
+      </div>
+      <p>time.sleep(.1)</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">mem</span> <span class="o">=</span> <span class="n">Memory</span><span class="p">(</span><span class="n">mem_size</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">subp</span> <span class="ow">in</span> <span class="n">processes</span><span class="p">:</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="o">.</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Registering process ....&quot;</span><span class="p">)</span>
+        <span class="n">avail</span> <span class="o">=</span> <span class="n">mem</span><span class="o">.</span><span class="n">available</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;  Available: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">avail</span><span class="p">)</span>
+        <span class="n">need</span> <span class="o">=</span> <span class="n">subp</span><span class="p">[</span><span class="s1">&#39;mem_required&#39;</span><span class="p">]</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;  Needed   : </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">need</span><span class="p">)</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">mem</span><span class="o">.</span><span class="n">allocate</span><span class="p">(</span><span class="n">subp</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-24'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-24'>#</a>
+      </div>
+      <p>time.sleep(.1)</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Memory snapshot ...&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">mem</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-25'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-25'>#</a>
+      </div>
+      <p>time.sleep(.1)</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Removing processes from memory ....&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">mem</span><span class="o">.</span><span class="n">deallocate</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">mem</span><span class="o">.</span><span class="n">deallocate</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Removing non existing processes from memory ....&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">mem</span><span class="o">.</span><span class="n">deallocate</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-26'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-26'>#</a>
+      </div>
+      <p>time.sleep(.1)</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Memory snapshot ...&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">mem</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Allocating another memory instance with double the size&quot;</span><span class="p">)</span>
+    <span class="n">mem2</span> <span class="o">=</span> <span class="n">Memory</span><span class="p">(</span><span class="n">mem_size</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Printing the new memory instances, shows that it refers to the single instance allowed&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">mem2</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Does mem1 == mem2&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">mem</span> <span class="o">==</span> <span class="n">mem2</span><span class="p">)</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>
