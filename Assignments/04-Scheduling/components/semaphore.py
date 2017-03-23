@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # === Class: Semaphore===
-import sys, os
-sys.path.append(os.path.dirname(os.path.realpath(__file__))+'/components')
+from sim_components import *
+
 class Semaphore(object):
     """A class to simulate a semaphore.
     - **Methods**:

@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
-import sys, os
-sys.path.append(os.path.dirname(os.path.realpath(__file__))+'/components')
+from sim_components import *
 import random
 
-from sim_components import *
 
 # === Class: Cpu===
 
@@ -104,8 +102,7 @@ def test_cpu_class():
     single_cpu = Cpu()
 
     print("Placing process on single_cpu")
-    print("\t", end=' ')
-    print(single_cpu.run_process(processes[0]))
+    print("\t%s"%single_cpu.run_process(processes[0]))
 
     print("Placing another process on single_cpu (should fail) =>")
     try:
@@ -116,7 +113,6 @@ def test_cpu_class():
     print("Test to see if cpu is busy, before loading a process=>")
     if not single_cpu.busy():
         try:
-            print("\t",end=' ')
             single_cpu.run_process(processes[1])
         except:
             print("\tprocess already running on cpu")
@@ -127,20 +123,19 @@ def test_cpu_class():
     myclock += random.randint(500,1000)
 
     print("Removing process from single_cpu=>")
-    print("\t",end=' ')
-    print(single_cpu.remove_process())
+    
+    print("\t%s"%single_cpu.remove_process())
 
     print("Adding different process to single_cpu")
-    print("\t",end=' ')
-    print(single_cpu.run_process(processes[1]))
+    print("\t%s"%single_cpu.run_process(processes[1]))
 
     print("Adding some random time to clock, so process run time wont be init value of clock")
     myclock += random.randint(500,1000)
 
     print("Removing process from single_cpu")
     p2 = single_cpu.remove_process()
-    print("\t",end=' ')
-    print(p2)
+
+    print("\t%s"%p2)
 
 
     print("Attempting to run a NON process on a cpu=>")

@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-import sys, os
-sys.path.append(os.path.dirname(os.path.realpath(__file__))+'/components')
+from sim_components import *
 
 
 # === Class: Accounting===
