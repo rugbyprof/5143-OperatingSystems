@@ -87,7 +87,7 @@ class Scheduler(object):
         self.cpu = Cpu()
         self.accounting = SystemAccounting()
         self.semaphore = SemaphorePool(num_sems=5, count=1)
-        self.job_scheduling_queue = Fcfs()
+        self.job_scheduling_queue = Fifo()
 
 
     def new_process(self,job_info):
