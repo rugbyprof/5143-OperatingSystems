@@ -35,6 +35,7 @@ class Accounting(object):
         self.start_time = 0
         self.end_time = 0
         self.num_bursts = 0
+        
 
     def __str__(self):
         """
@@ -75,7 +76,11 @@ class SystemAccounting(object):
             print(ss_key)
             string += "[ Process_ID: " + str(ss_key) + " \n  " + MyStr(ss_val) + "\n"
         return string
+    
+    def update_value(self,pid,key,value):
+        self.accounts[pid].key = value
 
     def calc_totals(self):
         # To be implemented by you
-        pass
+        for k,v in self.accounts.items():
+            print(k,v)
