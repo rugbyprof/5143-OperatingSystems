@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from sim_components import *
-
+import random
 
 # === Class: Accounting===
 
@@ -36,6 +36,22 @@ class Accounting(object):
         self.end_time = 0
         self.num_bursts = 0
         
+    def __setitem__(self, key, val):
+        """
+        "setitem" allows the '[]' brackets to be used to set a data member. I used this as a
+        shortcut to access the many data members used by this class, especially since it is
+        composed of a 'Pcb' and 'Accounting' class.
+        """
+        if hasattr(self, key):
+            setattr(self, key, val)
+        else:
+            setattr(self, key, val)
+
+    def __getitem__(self, key):
+        if hasattr(self, key):
+            return getattr(self, key)
+        else:
+            return None
 
     def __str__(self):
         """
@@ -72,15 +88,41 @@ class SystemAccounting(object):
 
     def __str__(self):
         string = ""
-        for ss_key, ss_val in self.__shared_state['accounts'].items():
-            print(ss_key)
-            string += "[ Process_ID: " + str(ss_key) + " \n  " + MyStr(ss_val) + "\n"
+        for ss_key, ss_val in self.accounts.items():
+            #print(ss_key)
+            string += "[ Process_ID: " + str(ss_key) + " \n  " + my_str(ss_val) + "\n"
         return string
+
     
-    def update_value(self,pid,key,value):
-        self.accounts[pid].key = value
+    def __setitem__(self, key, pair):
+        """No error checking!!
+        """
+        subkey,val = pair
+        self.accounts[key][str(subkey)] = val
+
 
     def calc_totals(self):
         # To be implemented by you
         for k,v in self.accounts.items():
             print(k,v)
+
+
+if __name__=='__main__':
+
+    p = load_process_file(os.path.dirname(os.path.realpath(__file__))+'/../input_data/processes.txt')
+    processes = []
+    count = 0
+    for i in range(len(p)):
+        processes.append(Process(**p[i]))
+        count += 1
+        if count >= 5:
+            break
+        
+
+    print(processes)
+    processes[-1].acct[str(4)] = ('total_burst_time',999)
+    print(processes[-1].acct)
+    processes[-1].acct.calc_totals()
+
+    
+ 

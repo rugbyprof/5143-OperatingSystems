@@ -36,7 +36,7 @@ class Process(object):
         Params: (dict)
             kwargs should contain everyting it the attributes list above.
         """
-        print(kwargs)
+        #print(kwargs)
         # Either pid or process_id need be present in kwargs otherwise, error
         if 'process_id' not in kwargs and 'pid' not in kwargs:
             raise Exception("Need a process id to initialize a process!")
