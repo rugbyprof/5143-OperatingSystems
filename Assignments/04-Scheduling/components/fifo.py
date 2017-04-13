@@ -65,6 +65,10 @@ class Fifo(list):
             - (mixed,Process): A copy of the first process in the queue, or a value 
                                from the first process in the queue. 
         """
+
+        if self.empty():
+            return False 
+
         if key is None:
             return self.Q[0]
         else:
@@ -111,17 +115,28 @@ class Fifo(list):
 
 if __name__=='__main__':
 
-
+    # read process information from file
     p = load_process_file(os.path.dirname(os.path.realpath(__file__))+'/../input_data/processes.txt')
+
+    # create a fifo queue
     processes = Fifo()
     count = 0
+
+    # create processes from data from file
     for i in range(len(p)):
         processes.add(Process(**p[i]))
         count += 1
+        
+        # stop at 5 for testing purposes
         if count >= 5:
             break
     
-    mr = processes.first('mem_required')
+    while not processes.empty():
+        # get memory_required from process at front of queue
+        mr = processes.first('mem_required')
 
-    print(processes.Q)
+        # print memory_required
+        print(mr)
+
+        processes.remove()
 
