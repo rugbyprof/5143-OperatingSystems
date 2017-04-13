@@ -48,7 +48,7 @@ class Process(object):
 
         self.state = 'New'                                # All new processes are in the 'New' state
         self.io_status_info = []                          # No IO devices are allocated
-        self.acct = SystemAccounting(kwargs['process_id'])# Instance of an Accounting Block
+        self.acct = Accounting()                          # Instance of an Accounting Block
         self.mem_required = 0
         self.burst_time = 0
         self.priority = 0

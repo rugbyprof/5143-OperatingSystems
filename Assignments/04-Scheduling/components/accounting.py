@@ -80,11 +80,15 @@ class SystemAccounting(object):
 
         # If the 'accounts' dictionary doesn't exist yet, create it.
         if not hasattr(self, 'accounts'):
+            print("resetting accounts")
             self.accounts = {}
 
         # Register process and get own instance of account class
         if not acct_pid is None:
             self.accounts[acct_pid] = Accounting()
+			
+        if not hasattr(self, 'randomvar'):	
+            self.randomvar = random.randint(0,999999999)
 
     def __str__(self):
         string = ""
@@ -99,6 +103,10 @@ class SystemAccounting(object):
         """
         subkey,val = pair
         self.accounts[key][str(subkey)] = val
+        #print(self.accounts[key].acct)
+        
+    def register_process(self,p):
+        self.accounts[p.process_id] = p
 
 
     def calc_totals(self):
@@ -107,22 +115,30 @@ class SystemAccounting(object):
             print(k,v)
 
 
+            
+            
 if __name__=='__main__':
 
+    S = SystemAccounting()
     p = load_process_file(os.path.dirname(os.path.realpath(__file__))+'/../input_data/processes.txt')
-    processes = []
+    processes = {}
     count = 0
     for i in range(len(p)):
-        processes.append(Process(**p[i]))
+        print(p[i])
+        processes[p[i]['pid']] = Process(**p[i])
+        S.register_process(processes[p[i]['pid']])
         count += 1
         if count >= 5:
             break
-        
+			
+    print(S)
+    pid = str(5)
+    processes[pid]['state'] = 'Running'
+    pid = str(4)
+    S[pid] = ('turnaround_time','455')
+    print(S)
 
-    print(processes)
-    processes[-1].acct[str(4)] = ('total_burst_time',999)
-    print(processes[-1].acct)
-    processes[-1].acct.calc_totals()
+	
 
     
  
