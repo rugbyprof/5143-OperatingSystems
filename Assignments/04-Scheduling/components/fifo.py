@@ -110,4 +110,18 @@ class Fifo(list):
             yield elem
 
 if __name__=='__main__':
-    pass
+
+
+    p = load_process_file(os.path.dirname(os.path.realpath(__file__))+'/../input_data/processes.txt')
+    processes = Fifo()
+    count = 0
+    for i in range(len(p)):
+        processes.add(Process(**p[i]))
+        count += 1
+        if count >= 5:
+            break
+    
+    mr = processes.first('mem_required')
+
+    print(processes.Q)
+
