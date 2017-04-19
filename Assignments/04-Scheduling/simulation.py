@@ -133,7 +133,7 @@ class Simulator(object):
         
         # Can pass a start time in to init the system clock.
         if 'start_clock' in kwargs:
-            self.input_file = kwargs['start_clock']
+            self.start_clock = kwargs['start_clock']
         else:
             self.start_clock = 0
 
@@ -166,6 +166,8 @@ class Simulator(object):
             'S': self.scheduler.sem_release
         }
 
+        print(self.jobs_dict)
+        sys.exit()
 
         # Start processing jobs:
         
