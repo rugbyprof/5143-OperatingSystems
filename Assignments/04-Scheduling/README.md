@@ -122,7 +122,7 @@ Often more than one event happen at the same time. Use the following rules to de
 ### Additional Requirements
 
 - Your implementation must be distributed across more than one source code file, in some sensible manner which reflects the logical purpose of the various components of your design, to encourage problem decomposition and modular design. This is mostly done for you if you use the starter code, however you must use OOP concepts with any additional code you add. 
-- Include a README file in your submission which contains:
+- Include a README.md file in your submission which contains:
     - Team Information
         - The team members names.
         - Which additional code is attributed to each team member.
@@ -150,7 +150,13 @@ Often more than one event happen at the same time. Use the following rules to de
 
 ## Deliverables
 
-- TBD
+- All files should be on github in your assignments folder by Tuesday May 9<sup>th</sup>. by Midnight.
+- Create a folder called `cpu_simulation` in your assignments folder to place all project files.
+- Create a `README.md` file that fulfills the "Additional Requirements" stated above.
+- Bring a hard copy of your code and readme and place it in my mailbox by 10:00am May 10<sup>th</sup>. 
+- Code placed on github too late or hard copy delivered late will result in a 2 letter grade penalty.
+- Code that does not run, will be assigned a grade of zero.
+- Otherwise, see below for additional grading requirements.
 
 ## Evaluation
 
