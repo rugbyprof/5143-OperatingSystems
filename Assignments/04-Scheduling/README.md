@@ -128,7 +128,9 @@ Often more than one event happen at the same time. Use the following rules to de
         - Which additional code is attributed to each team member.
         - Time each team member spent working on project.
     - Your participation should be visualized in a pie chart:
+    
     ![](http://linux.activityworkshop.net/more_info/pie_google.png)
+    
     - Files in project
         - A list showing the file structure of your code and which files are included in your project.
         
