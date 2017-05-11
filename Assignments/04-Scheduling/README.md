@@ -181,3 +181,4 @@ Notes:
 - Comment code with blocks for each function / class and major comment block with names and sources
 - remove any code you do not use
 - references are a must 
+- provide instructions on how to run. make sure to generate 3 output files (I should specify names).
