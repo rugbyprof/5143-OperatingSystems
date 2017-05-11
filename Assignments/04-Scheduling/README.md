@@ -180,3 +180,4 @@ Notes:
 - upload zip file called `cpu_simulation_#.zip` that unzips to folder `cpu_simulation_(team#)`
 - Comment code with blocks for each function / class and major comment block with names and sources
 - remove any code you do not use
+- references are a must 
