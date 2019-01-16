@@ -8,7 +8,7 @@ A Bash script is a plain text file which contains a series of commands. These co
 
 It is convention to give files that are Bash scripts an extension of .sh (`myscript.sh` for example). Linux is an extension-less system so a script doesn't necessarily have to have this characteristic in order to work.
 
-##How do you run a script?
+## How do you run a script?
 
 - Permission need to be correct. The file has to be executable.
 - Note: the `~$` in all the scripts is the "command prompt".  So don't assume that is part of the command.
@@ -137,7 +137,7 @@ Here are a few quick points on syntax. They will be elaborated on and demonstrat
 - Some people like to always write variable names in uppercase so they stand out. It's your preference however. They can be all uppercase, all lowercase, or a mixture.
 - A variable may be placed anywhere in a script (or on the command line for that matter) and, when run, Bash will replace it with the value of the variable. This is made possible as the substitution is done before the command is run.
 
-##Command line arguments
+## Command line arguments
 
 Command line arguments are commonly used and easy to work with so they are a good place to start.
 
@@ -165,8 +165,6 @@ cp $1 $2
 echo Details for $2
 ls -lh $2
 ```
-
- 
 
 - **Line 4** - run the command `cp` with the first command line argument as the source and the second command line argument as the destination.
 - **Line 8** - run the command `echo` to print a message.
