@@ -1,24 +1,20 @@
-# 5143-OperatingSystems - Syllabus
+# 5143-Operating Systems
 
-- Roster: https://docs.google.com/spreadsheets/d/1b2SBwqFd3qE6yX0ArNJOgDWokpVF0yCcdO1WsjPq3C4/edit?usp=sharing
-
-![os pic](http://ecx.images-amazon.com/images/I/51xilf5QJqL._AC_UL160_SR117,160_.jpg)
-- Title: Operating Systems: Internals and Design Principles (8th Edition) 8th Edition
-- Author: William Stallings 
-- Publisher: Pearson; 8 edition (February 2, 2014)
-- Language: English
-- ISBN-10: 0133805913
+### Roster
+![](https://d3vv6lp55qjaqc.cloudfront.net/items/220B0V0H3c041K2p251Z/google-sheets-16.png?X-CloudApp-Visitor-Id=1094421) [Class Roster](https://docs.google.com/spreadsheets/d/1BQ7jLcJzRbNs27ir5Pb3_IS9UruNFTCwTmm5DoPAqp4/edit?usp=sharing)
 
 
-- Days: TR 330pm 450pm 
-- Location: BO 213
-- Final Exam: Tue May 9<sup>th</sup>, 3:30-5:30 p.m. `(Final is Mandatory no leaving before finals week.)`
-- Dates: January 16 - May 6
-- Holidays: 
-    - Martin Luther King: January 16 
-    - Spring Break: March 13-18
-    - Easter Break March 13-14
-- Last Day for “W”: March 27
+### General Course Info
+- __Days:__ MW 5:30 p.m. - 6:50 p.m. 
+- __Location:__ BO 320
+- [__Semester:__](https://msutexas.edu/registrar/_assets/files/pdfs/acadcal1920.pdf)Tue Jan 21<sup>st</sup> - Wed May 8<sup>th</sup>
+- [__Holidays:__](https://msutexas.edu/registrar/_assets/files/pdfs/acadcal1920.pdf)
+  - __Martin Luther King's Birthday__ Mon Jan 20<sup>th</sup>
+  - __Spring Break:__ Mon Mar 16<sup>th</sup> - Fri Mar 21<sup>st</sup> 
+  - __Easter Break:__ Wed Apr 8<sup>th</sup> - Fri Apr 10<sup>th</sup>
+- [__Last Day for “W”:__](https://msutexas.edu/registrar/_assets/files/pdfs/acadcal1920.pdf) Mon Mar 30<sup>th</sup>
+- [__Last Day of Class:__](https://msutexas.edu/registrar/_assets/files/pdfs/acadcal1920.pdf) Fri May 8<sup>th</sup>
+- [__Final Exam:__](https://msutexas.edu/registrar/_assets/files/pdfs/spring20finals.pdf) Wednesday May 13<sup>th</sup>, 8:00 p.m. - 10:00 p.m.
 
 ## Topics
 
